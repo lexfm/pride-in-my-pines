@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePrefix } from "./components/Image";
 
 export default function Home() {
   return (
@@ -6,7 +7,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           aria-hidden
-          src="/images/flyer.png"
+          src={withBasePrefix("/flyer.png")}
           alt="File icon"
           width={500}
           height={500}
