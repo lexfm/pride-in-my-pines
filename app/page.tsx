@@ -10,6 +10,7 @@ export default function Home() {
           alt="File icon"
           width={500}
           height={500}
+          unoptimized
         />
         <h2 className="text-4xl font-extrabold dark:text-white">Now let's do our PIMP queer page!</h2>
 
