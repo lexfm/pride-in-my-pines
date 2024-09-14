@@ -6,7 +6,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           aria-hidden
-          src={"/flyer.png"}
+          src="/flyer.png"
           alt="File icon"
           width={500}
           height={500}
