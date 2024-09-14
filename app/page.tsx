@@ -3,18 +3,23 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+      <header className="flex items-center justify-center min-h-screen">
+        <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 drop-shadow-lg text-center">
+          Pride in My Pines
+        </h1>
+      </header>
+      <main className="flex flex-col gap-8 row-start-2 items-center items-start">
         <Image
           aria-hidden
           src="/flyer.png"
           alt="File icon"
-          width={500}
-          height={500}
+          width={700}
+          height={700}
           unoptimized
         />
         <h2 className="text-4xl font-extrabold dark:text-white">Now let's do our PIMP queer page!</h2>
 
-        <div className="flex gap-3 items-center flex-col sm:flex-row">
+        <div className="flex gap-6 items-center justify-center flex-wrap">
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
             href="https://www.instagram.com/prideinmypines/"
