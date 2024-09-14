@@ -2,17 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
+} */
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -24,4 +28,13 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.pimp-bg {
+  background-image: url('/pimpBG.webp');
+  background-size: cover; /* or contain, depending on how you want to display it */
+  background-position: center; /* To center the background image */
+  background-repeat: no-repeat; /* To prevent repeating */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
 }
