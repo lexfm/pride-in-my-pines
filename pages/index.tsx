@@ -1,16 +1,6 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import Image from "next/image";
 import Link from 'next/link';
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'stripe-buy-button': any; // Define your custom element here
-    }
-  }
-}
 
 export default function Home() {
   return (
@@ -30,26 +20,6 @@ export default function Home() {
           height={700}
         />
 
-
-
-        {/* 
-        <div className="payments">
-
-          <stripe-buy-button
-            buy-button-id="buy_btn_1PyMq92NINoc8Fp0NG3qtqKK"
-            publishable-key="pk_live_51PyKqx2NINoc8Fp0bNfrEkw8XieRB3bCfsizYgS2f4QWiOZErAcckGlYbgoMQ1uQFSnVftoR7Co6Nmv7QPRj6Xj600FPbBO0AR"
-          >
-          </stripe-buy-button>
-
-
-          <stripe-buy-button
-            buy-button-id="buy_btn_1PyMnT2NINoc8Fp0BUAmuO6F"
-            publishable-key="pk_live_51PyKqx2NINoc8Fp0bNfrEkw8XieRB3bCfsizYgS2f4QWiOZErAcckGlYbgoMQ1uQFSnVftoR7Co6Nmv7QPRj6Xj600FPbBO0AR"
-          >
-          </stripe-buy-button>
-
-
-        </div> */}
         <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
           <div className="max-h-[50vh] overflow-y-auto">
             <h2 className="text-4xl font-extrabold dark:text-white info-coming">The Ghost, Gays and They’s Camping Adventure</h2>
