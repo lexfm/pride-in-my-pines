@@ -32,7 +32,7 @@ export default function Home() {
               </p>
               <p>Here's what awaits you:</p>
 
-              <ul className="list-disc list-inside space-y-2 text-lg font-medium">
+              <ul className="list-disc list-inside space-y-2">
                 <li>Group breakfast on Saturday & Sunday morning (Scrambled eggs, saussage & crepes)</li>
                 <li> Social Hour Provided Friday & Saturday Nights 5-6PM</li>
                 <li> DRAG Bingo Night with Incredible Prizes</li>
@@ -97,7 +97,7 @@ export default function Home() {
             target="_self"
             rel="noopener noreferrer"
           >
-            Get my ticket!
+            Join the adventure!
           </Link>
         </div>
 
