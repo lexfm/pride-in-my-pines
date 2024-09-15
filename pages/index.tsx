@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid justify-items-center  p-2 pb-10 gap-8 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid justify-items-center  p-2 pb-10 font-[family-name:var(--font-geist-sans)]">
       <script async
         src="https://js.stripe.com/v3/buy-button.js">
       </script>
