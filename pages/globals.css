@@ -31,7 +31,7 @@ body {
 }
 
 .pimp-bg {
-  background-image: url('/pimpBG.webp');
+  background-image: url('/PIMPLogo.jpg');
   background-size: auto; /* or contain, depending on how you want to display it */
   background-position: center; /* To center the background image */
   background-repeat: no-repeat; /* To prevent repeating */
