@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Image from "next/image";
-import { Facebook, Instagram } from 'lucide-react'
+import Link from 'next/link';
 
 declare global {
   namespace JSX {
@@ -18,12 +18,7 @@ export default function Home() {
       <script async
         src="https://js.stripe.com/v3/buy-button.js">
       </script>
-      <header className="relative flex items-center justify-center  min-h-48 max-h-48 md:max-h-64 lg:max-h-32 pimp-bg overflow-hidden">
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div> {/* Slight overlay */}
-        <h1 className="relative text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-blue-600 to-yellow-500 drop-shadow-2xl text-center">
-          Pride in My Pines
-        </h1>
-      </header>
+
       <main className="flex flex-col gap-8 row-start-2 items-center items-start">
 
 
@@ -110,11 +105,6 @@ export default function Home() {
                 <b>Need camping gear? </b> We have a network of generous campers willing to share! Just DM us to connect.
               </p>
 
-              <p>
-                <b>NThis is your chance to escape the ordinary and embrace an extraordinary adventure. RSVP now and secure your spot!
-                </b>
-              </p>
-
               <p><b>This is your chance to escape the ordinary and embrace an extraordinary adventure. RSVP now and secure your spot!</b></p>
               <p><b>Ghost Gays and Days - Hosted by P.I.M.P - Pride In My Pines</b></p>
               <p>ADD to we travel if possible the following</p>
@@ -126,45 +116,23 @@ export default function Home() {
           </div>
         </section>
         <div className="flex gap-6 items-center justify-center flex-wrap">
-          <a
+          <Link
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
                bg-gradient-to-r from-orange-600 via-purple-800 to-black
                text-white dark:text-orange-500
                gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
                text-lg sm:text-xl h-14 sm:h-16 px-6 sm:px-8 shadow-lg 
                dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
-            href="/"
+            href="/tickets"
             target="_self"
             rel="noopener noreferrer"
           >
             Get my ticket!
-          </a>
+          </Link>
         </div>
 
 
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://www.instagram.com/prideinmypines/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Instagram />
-          Instagram
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://www.facebook.com/prideinmypines"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Facebook />
-          Facebook
-        </a>
-
-      </footer>
     </div>
   );
 }

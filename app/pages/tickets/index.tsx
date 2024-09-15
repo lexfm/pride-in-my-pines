@@ -1,11 +1,11 @@
 import Link from "next/link";
-import styles from "./page.module.css";
+// import styles from "./page.module.css";
 
-export default function Started() {
+export default function Tickets() {
   return (
-    <main className={styles.main}>
+    <main className="tickets-section">
       <div>
-        Some page to get started Ja
+        Tickets go here
       </div>
       <Link passHref href="/">
         <button>Home</button>
