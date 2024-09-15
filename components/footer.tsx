@@ -23,7 +23,7 @@ const Footer = () => {
                 <Facebook />
                 Facebook
             </a>
-            <p>© 2024 Your Company. All Rights Reserved.</p>
+            <p>© 2024 P.I.M.P. All Rights Reserved.</p>
 
         </footer>
     );
