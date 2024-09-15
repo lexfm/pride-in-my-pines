@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Image from "next/image";
 import { Facebook, Instagram } from 'lucide-react'
 
@@ -27,7 +30,6 @@ export default function Home() {
         <div className="payments">
 
           <stripe-buy-button
-            class="bg-gray-800 text-white p-6"
             buy-button-id="buy_btn_1PyMq92NINoc8Fp0NG3qtqKK"
             publishable-key="pk_live_51PyKqx2NINoc8Fp0bNfrEkw8XieRB3bCfsizYgS2f4QWiOZErAcckGlYbgoMQ1uQFSnVftoR7Co6Nmv7QPRj6Xj600FPbBO0AR"
           >
