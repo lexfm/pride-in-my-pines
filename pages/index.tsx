@@ -77,11 +77,6 @@ export default function Home() {
 
               <p><b>This is your chance to escape the ordinary and embrace an extraordinary adventure. RSVP now and secure your spot!</b></p>
               <p><b>Ghost Gays and Days - Hosted by P.I.M.P - Pride In My Pines</b></p>
-              <p>ADD to we travel if possible the following</p>
-              <p><b>Interested in an ebike rental</b></p>
-              <p><b>Emergency Contact Info</b></p>
-              <p><b>Day Pass $25</b></p>
-
             </div>
           </div>
         </section>
