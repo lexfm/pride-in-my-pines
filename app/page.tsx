@@ -1,6 +1,14 @@
 import Image from "next/image";
 import { Facebook, Instagram } from 'lucide-react'
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'stripe-buy-button': any; // Define your custom element here
+    }
+  }
+}
+
 export default function Home() {
   return (
     <div className="grid justify-items-center  p-2 pb-10 gap-8 font-[family-name:var(--font-geist-sans)]">
