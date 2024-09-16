@@ -10,6 +10,9 @@ import './globals.css';
 const MyApp = ({ Component, pageProps }: AppProps) => {
     return (
         <>
+            <script async
+                src="https://js.stripe.com/v3/buy-button.js">
+            </script>
             <Head>
                 <title>Pride In My Pines</title>
             </Head>

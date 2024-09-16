@@ -1,14 +1,8 @@
 // components/Header.tsx
 const Header = () => {
-    return (
-        <header className="relative flex items-center justify-center  min-h-72 max-h-72 pimp-bg overflow-hidden">
-        <div className="absolute bg-black bg-opacity-10"></div> {/* Slight overlay */}
-        {/* <h1 className="relative text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-blue-600 to-yellow-500 drop-shadow-2xl text-center">
-          Pride in My Pines
-        </h1> */}
-      </header>
-    );
-  };
-  
-  export default Header;
-  
+  return (
+    <header className="fixed top-0 left-0 z-50 h-[25vh] sm: w-full bg-contain bg-center bg-no-repeat bg-[url('/bannerPIMP.png')] bg-gray-900" />
+  );
+};
+
+export default Header;

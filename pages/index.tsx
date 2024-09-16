@@ -4,11 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid justify-items-center  p-2 pb-10 font-[family-name:var(--font-geist-sans)]">
-      <script async
-        src="https://js.stripe.com/v3/buy-button.js">
-      </script>
-
+    <>
       <main className="flex flex-col gap-8 row-start-2 items-center items-start">
 
 
@@ -21,7 +17,23 @@ export default function Home() {
         />
 
         <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
-          <div className="max-h-[50vh] overflow-y-auto">
+
+          <div className="flex gap-6 items-center justify-center flex-wrap">
+            <Link
+              className="mb-5 rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+               bg-gradient-to-r from-orange-600 via-purple-800 to-black
+               text-white dark:text-orange-500
+               gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
+               text-lg sm:text-xl h-14 sm:h-16 px-6 sm:px-8 shadow-lg 
+               dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
+              href="/tickets"
+              target="_self"
+              rel="noopener noreferrer"
+            >
+              Secure my ticket!
+            </Link>
+          </div>
+          <div>
             <h2 className="text-4xl font-extrabold dark:text-white info-coming">The Ghost, Gays and They’s Camping Adventure</h2>
             <h3 className="text-2xl font-extrabold dark:text-white info-coming">Calling all San Diego LGBTQ+ Adventurers!</h3>
 
@@ -55,8 +67,8 @@ export default function Home() {
                 <a
                   href="https://www.camplife.com/campground/Dixon+Lake+Recreation+Area"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="text-blue-500 hover:underline ml-2 mr-2"
+                  rel="noopener noreferrer"
                 >
                   Dixon Lake Recreation Area
                 </a>
@@ -98,6 +110,6 @@ export default function Home() {
 
 
       </main>
-    </div>
+    </>
   );
 }

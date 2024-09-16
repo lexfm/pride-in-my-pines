@@ -31,12 +31,12 @@ body {
 }
 
 .pimp-bg {
-  background-image: url('/PIMPLogo.jpg');
-  background-size: auto; /* or contain, depending on how you want to display it */
+  background-image: url('/bannerPIMP.png');
+  background-size: cover; /* or contain, depending on how you want to display it */
   background-position: center; /* To center the background image */
   background-repeat: no-repeat; /* To prevent repeating */
   width: 100%;
-  /* height: 100vh; Full viewport height */
+  height: 35vh; /*Full viewport height */
 }
 
 .info-coming{
