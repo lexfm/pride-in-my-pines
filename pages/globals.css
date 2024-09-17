@@ -39,6 +39,32 @@ body {
   height: 35vh; /*Full viewport height */
 }
 
-.info-coming{
-  text-align: center;
+/* Progress bar container */
+.progress-bar-container {
+  width: 100%; /* Full width */
+  max-width: 400px; /* Adjust to limit the maximum width */
+  background-color: #333; /* Dark background */
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+  margin: 10px auto; /* Centering with auto margin */
 }
+
+/* Animated progress bar */
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: orange; /* Halloween-themed orange color */
+  animation: fillProgressBar 3s ease-in-out forwards;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.6); /* Glow effect */
+}
+
+@keyframes fillProgressBar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
