@@ -4,8 +4,7 @@ import { Facebook, Instagram } from 'lucide-react'
 const Footer = () => {
     return (
         // <footer className="w-full flex gap-6 flex-wrap items-center justify-center bg-gray-900 text-gray-200 p-4 fixed bottom-0">
-        <footer className="w-full flex gap-6 flex-wrap items-center justify-center bg-gray-900 text-gray-200 p-4">
-
+        <footer className="w-full fixed bottom-0 flex gap-6 flex-wrap items-center justify-center bg-gray-900 text-gray-200 p-4">
             <a
                 className="flex items-center gap-2 hover:underline hover:underline-offset-4"
                 href="https://www.instagram.com/prideinmypines/"

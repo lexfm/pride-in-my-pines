@@ -5,36 +5,17 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <main className="flex flex-col gap-8 row-start-2 items-center items-start">
-
-
+      <main className="flex flex-col gap-4 row-start-2 items-center items-start">
         <Image
           aria-hidden
-          src="/flyer.png"
+          src="/latestPoster.jpg"
           alt="File icon"
           width={700}
           height={700}
         />
-
         <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
-
-          <div className="flex gap-6 items-center justify-center flex-wrap">
-            <Link
-              className="mb-5 rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-               bg-gradient-to-r from-orange-600 via-purple-800 to-black
-               text-white 
-               gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
-               text-lg sm:text-xl h-14 sm:h-16 px-6 sm:px-8 shadow-lg 
-               dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
-              href="/tickets"
-              target="_self"
-              rel="noopener noreferrer"
-            >
-              Save your spot!
-            </Link>
-          </div>
           <div>
-            <h2 className="text-4xl font-extrabold dark:text-white text-center">The Ghost, Gays and They’s Camping Adventure</h2>
+            <h2 className="text-4xl font-extrabold dark:text-white text-center">The Ghosts, Gays and They’s Camping Adventure</h2>
             <h3 className="text-2xl font-extrabold dark:text-white text-center">Calling all San Diego LGBTQ+ Adventurers!</h3>
 
             <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
