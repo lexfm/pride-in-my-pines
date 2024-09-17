@@ -8,7 +8,7 @@ export default function Home() {
       <main className="flex flex-col gap-4 row-start-2 items-center items-start">
         <Image
           aria-hidden
-          src="/latestPoster.jpg"
+          src="/PIMPOctDates.png"
           alt="File icon"
           width={700}
           height={700}
@@ -26,7 +26,7 @@ export default function Home() {
               <p>Here's what awaits you:</p>
 
               <ul className="list-disc list-inside space-y-2">
-                <li>Group breakfast on Saturday & Sunday morning (Scrambled eggs, saussage & crepes)</li>
+                <li>Group breakfast on Saturday & Sunday morning (Scrambled eggs, sausage & crepes)</li>
                 <li> Social Hour Provided Friday & Saturday Nights 5-6PM</li>
                 <li> DRAG Bingo Night with Incredible Prizes</li>
                 <li>Best Tent & Onesie/Halloween Costume Contest - 1 Night Stay at the Lafayette Hotel in San Diego</li>
@@ -34,13 +34,14 @@ export default function Home() {
                 <li>Onesie Night - Bring your best onesie and or your Halloween costume!</li>
                 <li>Embark on a scenic hike led by Dakota! Explore the beauty of the surrounding landscape and get your heart pumping.</li>
                 <li>Group Lunch sponsored by Jeff Brick - COMPASS Real Estate - Burgers & Cheeseburgers Served</li>
-                <li>Fun Games & Activities - Await at our private and secluded campsite. Even friends who can't camp can join the festivities! We’ll have the following; Volleyball, Cornhole, Flipcup and beer pong to name a few!</li>
+                <li>Fun Games & Activities - Await at our private and secluded campsite. We’ll have the following; Volleyball, Cornhole, Flipcup and beer pong to name a few!</li>
+                <li>Even friends who can't camp can join the festivities! - Day Passes include lunch bbq, activities at the lake, drag bingo, and movie night.  Don't forget to bring something for dinner</li>
                 <li>Relax and unwind by the campfire, share stories under the stars, and enjoy the stunning scenery. Whether you're an avid hiker or simply seeking a relaxing escape, there's something for everyone.</li>
                 <li>For the RV enthusiasts and glamping aficionados - Please Contact us directly for your questions</li>
               </ul>
 
               <p>
-                <b>Peace of mind is key!</b> Enjoy the convenience of on-site bathroom and shower facilities 1 Shower token provided. More shower tokens can be purchased directly from the concession stand
+                <b>Peace of mind is key!</b> Enjoy the convenience of on-site bathroom and shower facilities, 1 Shower token provided. More shower tokens can be purchased directly from the concession stand.
               </p>
 
               <p>
@@ -57,7 +58,7 @@ export default function Home() {
               </p>
 
               <p>
-                <b>Dinners are BYOC</b> , but we've got you covered on everything else! Take advantage of the provided charcoal grill pits, and water access for a hassle-free culinary experience.
+                <b>Dinners are Bring Your Own Food (or Your Own Cook!)</b> , but we've got you covered on everything else! Take advantage of the provided charcoal grill pits, and water access for a hassle-free culinary experience.
               </p>
 
               <p>
