@@ -34,8 +34,8 @@ export default function Home() {
             </Link>
           </div>
           <div>
-            <h2 className="text-4xl font-extrabold dark:text-white info-coming">The Ghost, Gays and They’s Camping Adventure</h2>
-            <h3 className="text-2xl font-extrabold dark:text-white info-coming">Calling all San Diego LGBTQ+ Adventurers!</h3>
+            <h2 className="text-4xl font-extrabold dark:text-white text-center">The Ghost, Gays and They’s Camping Adventure</h2>
+            <h3 className="text-2xl font-extrabold dark:text-white text-center">Calling all San Diego LGBTQ+ Adventurers!</h3>
 
             <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
               <p>
