@@ -1,3 +1,4 @@
+import ImageCarousel from "@/components/imageCarousel";
 import Image from "next/image";
 import Link from 'next/link';
 
@@ -74,14 +75,18 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="flex gap-6 items-center justify-center flex-wrap">
+      </main>
+      <section id="testimonials">
+        <h3 className="text-2xl font-extrabold dark:text-white text-center mt-3 text">Check out our previous adventure!</h3>
+        <ImageCarousel />
+        <div className="flex gap-6 items-center justify-center flex-wrap mt-3 mb-3">
           <Link
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-               bg-gradient-to-r from-orange-600 via-purple-800 to-black
-               text-white 
-               gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
-               text-lg sm:text-xl h-14 sm:h-16 px-6 sm:px-8 shadow-lg 
-               dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
+            bg-gradient-to-r from-orange-600 via-purple-800 to-black
+            text-white 
+            gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
+            text-lg sm:text-xl h-14 sm:h-16 px-6 sm:px-8 shadow-lg 
+            dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
             href="/tickets"
             target="_self"
             rel="noopener noreferrer"
@@ -89,9 +94,7 @@ export default function Home() {
             Join the adventure!
           </Link>
         </div>
-
-
-      </main>
+      </section>
     </>
   );
 }

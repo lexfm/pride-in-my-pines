@@ -25,19 +25,21 @@ const Header = () => {
           </Link>
           ) :
           (<Link
-            className="relative top-[18vh] mb-3 rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+              className="relative top-[18vh] mb-3 rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
                bg-gradient-to-r from-orange-600 via-purple-800 to-black
                text-white 
                gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
                text-lg sm:text-xl h-11 sm:h-16 px-6 sm:px-8 shadow-lg 
                dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
-            href="/"
-            target="_self"
-            rel="noopener noreferrer"
-          >
-            More Info
-          </Link>)
+              href="/"
+              target="_self"
+              rel="noopener noreferrer"
+            >
+              More Info
+            </Link>)
         }
+
+
 
       </div>
 

@@ -68,3 +68,8 @@ body {
   }
 }
 
+.carousel {
+  margin-top: 1rem;
+  z-index: 0;
+}
+
