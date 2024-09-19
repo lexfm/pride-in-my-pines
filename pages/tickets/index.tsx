@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Link from "next/link";
 import PaymentButtons from "../../components/paymentButtons";
 
 declare global {
