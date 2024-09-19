@@ -15,12 +15,12 @@ const ImageCarousel = () => {
   // Array of images from the /public folder
   const images = [
     '/testimonials/Jeff.png',
-    '/testimonials/Vergon.png',
+    '/testimonials/Acostado.png',
     '/testimonials/Conchas.png',
     '/testimonials/Lago.png',
     '/testimonials/Teatro.png',
     '/testimonials/Agusto.png',
-    '/testimonials/Nalgon.png',
+    '/testimonials/Grupo.png',
     '/testimonials/Bbq.png',
     '/testimonials/Bonitos.png',
     '/testimonials/BonitosDias.png',
