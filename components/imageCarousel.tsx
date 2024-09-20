@@ -11,6 +11,7 @@ import { Keyboard, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 
 
+
 const ImageCarousel = () => {
   // Array of images from the /public folder
   const images = [
@@ -23,6 +24,15 @@ const ImageCarousel = () => {
     '/testimonials/Grupo.png',
     '/testimonials/Bbq.png',
     '/testimonials/Bonitos.png',
+    '/testimonials/foto12.jpg',
+    '/testimonials/foto13.JPG',
+    '/testimonials/foto14.png',
+    '/testimonials/foto15.PNG',
+    '/testimonials/foto16.JPG',
+    '/testimonials/foto17.JPG',
+    '/testimonials/foto18.JPG',
+    '/testimonials/foto19.JPG',
+    '/testimonials/foto20.JPG',
     '/testimonials/BonitosDias.png',
     '/testimonials/InLove.png'
   ];
