@@ -7,11 +7,11 @@ const Header = () => {
   const { pathname } = router;
 
   return (
-    <header className="fixed top-0 left-0 z-50 h-[26vh] w-full bg-contain bg-center bg-no-repeat bg-[url('/BWLogo.png')] bg-gray-900">
+    <header className="fixed top-0 left-0 z-50 h-[26vh] w-full bg-contain bg-[center_bottom_12px] bg-no-repeat bg-[url('/BWLogo.png')] bg-black">
       <div className="flex gap-6 items-center justify-center flex-wrap">
         {pathname === "/" ?
           (<Link
-            className="relative top-[19vh] mb-3 rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+            className="relative top-[18vh] sm:top-[19vh] mb-3 rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
                bg-gradient-to-r from-orange-600 via-purple-800 to-black
                text-white 
                gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
@@ -25,18 +25,18 @@ const Header = () => {
           </Link>
           ) :
           (<Link
-              className="relative top-[19vh] mb-3 rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+            className="relative top-[18vh] sm:top-[19vh] mb-3 rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
                bg-gradient-to-r from-orange-600 via-purple-800 to-black
                text-white 
                gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
                text-lg sm:text-xl h-11 sm:h-16 px-6 sm:px-8 shadow-lg sm:mt-3
                dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
-              href="/"
-              target="_self"
-              rel="noopener noreferrer"
-            >
-              More Info
-            </Link>)
+            href="/"
+            target="_self"
+            rel="noopener noreferrer"
+          >
+            More Info
+          </Link>)
         }
 
 
