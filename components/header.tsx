@@ -1,11 +1,25 @@
-import Link from "next/link";
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useState } from "react";
+import Link from 'next/link';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const { pathname } = router;
+
+    useEffect(() => {
+    const handleRouteChange = () => {
+      setIsOpen(false); // Close menu on route change
+    };
+
+    // Listen to route changes and close the dropdown
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    // Cleanup listener on unmount
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <nav className="bg-black text-white fixed w-full top-0 z-50 h-[80px] sm:h-[12vh]">
@@ -38,7 +52,7 @@ export default function Header() {
             (<Link href="/" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
               More Info
             </Link>)}
-          <Link href="/#testimonials" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-purple-500">
+          <Link href="/#testimonials" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-purple-500"  onClick={() => pathname === '/' ?  setIsOpen(false) : null}>
             Images
           </Link>
           <Link href="/contact" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
