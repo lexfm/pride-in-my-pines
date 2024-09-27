@@ -22,12 +22,12 @@ export default function Header() {
   }, [router.events]);
 
   return (
-    <nav className="bg-black text-white fixed w-full top-0 z-50 h-[80px] sm:h-[12vh]">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-black text-white fixed w-full top-0 z-50 h-[80px] sm:h-[13vh]">
+      <div className="w-full flex justify-between items-center overflow-hidden">
         {/* Logo with background image (desktop view) */}
         <div className="hidden md:block">
           <Link href="/" passHref>
-            <div className="w-[200px] h-[140px] bg-contain bg-[center_bottom_12px] bg-no-repeat bg-[url('/BWLogo.png')] bg-black cursor-pointer">
+            <div className="w-[240px] h-[80px] sm:h-[13vh] bg-[length:120%] bg-cover bg-[center_right_1rem] bg-[center_top_0.1rem] bg-no-repeat bg-[url('/BWLogo.png')] bg-black cursor-pointer">
               <span className="sr-only">Home</span>
             </div>
           </Link>
@@ -55,14 +55,20 @@ export default function Header() {
           <Link href="/#testimonials" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-purple-500"  onClick={() => pathname === '/' ?  setIsOpen(false) : null}>
             Images
           </Link>
-          <Link href="/contact" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
+          <Link href="/tacos" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
+            Friday Tacos!
+          </Link>
+          <Link href="/gearup" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
             Wanna gear up?
+          </Link>
+          <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
+            Intinerary
           </Link>
         </div>
 
 
         {/* Logo with background image (mobile view) */}
-        <div className="md:hidden absolute top-0 right-0 w-[140px] h-[80px] overflow-hidden">
+        <div className="md:hidden absolute top-0 right-0 w-[160px] h-[80px] overflow-hidden">
           <Link href="/" passHref>
             <div className="w-[160px] h-[100px] bg-cover bg-center bg-no-repeat bg-[url('/BWLogo.png')] bg-black cursor-pointer transform scale-110 transition-transform duration-300 ease-in-out hover:scale-115">
               {/* Accessible text for screen readers */}
