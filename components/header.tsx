@@ -45,12 +45,12 @@ export default function Header() {
 
         {/* Navigation Items */}
         <div className={`text-center absolute top-[100%] left-0 w-full bg-black md:static md:flex md:w-auto flex-col md:flex-row items-center gap-4 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible md:opacity-100 md:visible'}`}>
-          {pathname === "/" ?
-            (<Link href="/tickets" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
-              Tickets
-            </Link>) :
+          {pathname === "/tickets" ?
             (<Link href="/" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
               More Info
+            </Link>) :
+            (<Link href="/" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
+              Tickets
             </Link>)}
           <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-purple-500"  onClick={() => pathname === '/' ?  setIsOpen(false) : null}>
             Wanna Carpool?
