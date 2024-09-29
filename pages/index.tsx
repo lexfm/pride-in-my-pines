@@ -10,7 +10,7 @@ export default function Home() {
         <Image
           aria-hidden
           src="/PIMPOctDates.png"
-          alt="File icon"
+          alt="Camp Flier"
           width={700}
           height={700}
         />

@@ -52,13 +52,13 @@ export default function Header() {
             (<Link href="/" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
               More Info
             </Link>)}
-          <Link href="/#testimonials" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-purple-500"  onClick={() => pathname === '/' ?  setIsOpen(false) : null}>
-            Images
+          <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-purple-500"  onClick={() => pathname === '/' ?  setIsOpen(false) : null}>
+            Wanna Carpool?
           </Link>
           <Link href="/tacos" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
             Friday Tacos!
           </Link>
-          <Link href="/gearup" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
+          <Link href="/gear" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
             Wanna gear up?
           </Link>
           <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
