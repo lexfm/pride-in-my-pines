@@ -6,7 +6,8 @@ export default function Tacos() {
         <main className="taco-section flex flex-col gap-4 row-start-2 items-center items-start">
 
 
-            <h3 className="text-2xl font-extrabold dark:text-white text-center"> Tired after a long week on Friday? You don't have to bring dinner, from 6:30 to 8:30 PM you can enjoy the birria tacos, quesadillas, aguas frescas and more 😋🌮🍜 from the best Taco Truck in the area:
+            <h3 className="text-2xl font-extrabold dark:text-white text-center">
+                Had a long week? Let us handle dinner on Friday, October 18th! 🌮 From 6:30 to 8:30 PM, treat yourself to delicious birria tacos, quesadillas, aguas frescas, and more 😋 from the best taco truck in town:
                 <a
                     href="https://www.instagram.com/lacocinadelabuelo.sd/?hl=en"
                     target="_blank"

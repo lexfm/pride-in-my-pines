@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <>
       <Header />
-      <div className="mt-[10vh] p-2 pb-5 sm:pb-10 md:b-10 lg:pb-10 font-[family-name:var(--font-geist-sans)] min-h-[40vh] bg-gray-900">
+      <div className="mt-[13vh] p-2 pb-5 sm:pb-10 md:b-10 lg:pb-10 font-[family-name:var(--font-geist-sans)] min-h-[80vh] bg-gray-900">
         {children}
       </div>
       <Footer />

@@ -1,8 +1,18 @@
+import Image from "next/image";
+
 export default function Intinerary() {
     return (
-        <main className="gear-section">
+        <main className="intinerary-section flex flex-col gap-4 row-start-2 items-center items-start">
 
-            <h3 className="text-2xl font-extrabold dark:text-white text-center">Full Intinerary for "The Ghosts, Gays, and Theys Outdoor Adventure" 👻🌈👥 camping weekend coming soon!</h3>
+            <h3 className="text-2xl font-extrabold dark:text-white text-center">"The Ghosts, Gays, and Theys Outdoor Adventure" 👻🌈👥 </h3>
+
+            <Image
+                aria-hidden
+                src="/intinerary.jpg"
+                alt="Intinerary"
+                width={700}
+                height={700}
+            />
 
         </main>
     );
