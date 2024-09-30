@@ -10,10 +10,11 @@ export default function RootLayout({
   return (
     <>
       <Header />
-      <div className="mt-[13vh] p-2 pb-5 sm:pb-10 md:b-10 lg:pb-10 font-[family-name:var(--font-geist-sans)] min-h-[80vh] bg-gray-900">
+      <div className="pt-24 p-2 pb-5 sm:pb-10 md:pb-10 lg:pb-10 font-[family-name:var(--font-geist-sans)] min-h-[90vh] bg-gray-900 mt-2">
         {children}
       </div>
       <Footer />
+
     </>
   );
 }

@@ -22,12 +22,12 @@ export default function Header() {
   }, [router.events]);
 
   return (
-    <nav className="bg-black text-white fixed w-full top-0 z-50 h-[80px] sm:h-[13vh]">
+    <nav className="bg-black text-white w-full fixed top-0 left-0 z-50 h-[6rem]">
       <div className="w-full flex justify-between items-center overflow-hidden">
         {/* Logo with background image (desktop view) */}
         <div className="hidden md:block">
           <Link href="/" passHref>
-            <div className="w-[240px] h-[80px] sm:h-[13vh] bg-[length:120%] bg-cover bg-[center_right_1rem] bg-[center_top_0.1rem] bg-no-repeat bg-[url('/BWLogo.png')] bg-black cursor-pointer">
+            <div className="w-[240px] h-[6rem] bg-[length:120%] bg-[center_top_-0.5rem] bg-cover bg-no-repeat bg-[url('/BWLogo.png')] bg-black cursor-pointer">
               <span className="sr-only">Home</span>
             </div>
           </Link>
