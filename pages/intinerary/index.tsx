@@ -8,10 +8,10 @@ export default function Intinerary() {
 
             <Image
                 aria-hidden
-                src="/intinerary.jpg"
+                src="/intinerary.png"
                 alt="Intinerary"
                 width={700}
-                height={700}
+                height={800}
             />
 
         </main>

@@ -91,7 +91,7 @@ export default function Home() {
             target="_self"
             rel="noopener noreferrer"
           >
-            Join the adventure!
+            Tickets Almost Gone!
           </Link>
         </div>
       </section>

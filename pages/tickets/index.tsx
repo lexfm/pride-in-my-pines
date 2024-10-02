@@ -18,7 +18,7 @@ export default function Tickets() {
           Check out some pics!
         </Link>
 
-        <h3 className="text-2xl font-extrabold dark:text-white text-center">You have two adventure options!</h3>
+        <h3 className="text-2xl font-extrabold dark:text-white text-center">You have two adventure options – Tickets Are Almost Gone!</h3>
 
         <PaymentButtons />
       </div>
