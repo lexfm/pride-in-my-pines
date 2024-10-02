@@ -25,7 +25,7 @@ export default function Header() {
     <nav className="bg-black text-white w-full fixed top-0 left-0 z-50 h-[6rem]">
       <div className="w-full flex justify-between items-center overflow-hidden">
         {/* Logo with background image (desktop view) */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link href="/" passHref>
             <div className="w-[240px] h-[6rem] bg-[length:120%] bg-[center_top_-0.5rem] bg-cover bg-no-repeat bg-[url('/BWLogo.png')] bg-black cursor-pointer">
               <span className="sr-only">Home</span>
@@ -34,7 +34,7 @@ export default function Header() {
         </div>
 
         {/* Hamburger Menu */}
-        <div className="md:hidden flex items-center justify-center mt-5 z-50">
+        <div className="lg:hidden flex items-center justify-center mt-5 z-50">
           <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
             <svg className="w-12 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}></path>
@@ -42,7 +42,7 @@ export default function Header() {
           </button>
         </div>
 
-        <div className=" w-full absolute md:hidden">
+        <div className=" w-full absolute lg:hidden">
           {pathname === "/" ?
             (
               <Link
@@ -66,35 +66,49 @@ export default function Header() {
 
 
         {/* Navigation Items */}
-        <div className={`text-center absolute top-[100%] left-0 w-full bg-black md:static md:flex md:w-auto flex-col md:flex-row items-center gap-4 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible md:opacity-100 md:visible'}`}>
-          {pathname === "/tickets" ?
-            (<Link href="/" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
-              More Info
-            </Link>) :
-            (<Link href="/tickets" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
-              Tickets
-            </Link>)}
+        <div className={`text-center absolute top-[100%] left-0 w-full bg-black lg:static lg:flex lg:w-auto flex-col lg:flex-row items-center gap-4 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible lg:opacity-100 lg:visible'}`}>
 
-          <Link href="/tacos" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
-            Friday Tacos!
-          </Link>
-          <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
-            Intinerary
-          </Link>
-          <Link href="/bring" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
-            What-To-Bring
-          </Link>
-          <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-purple-500" onClick={() => pathname === '/' ? setIsOpen(false) : null}>
-            Wanna Carpool?
-          </Link>
-          <Link href="/gear" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out md:hover:bg-transparent md:hover:text-orange-500">
-            Wanna gear up?
-          </Link>
+          {pathname !== "/tickets" && (
+            <Link href="/tickets" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+              Tickets
+            </Link>
+          )}
+
+          {pathname !== "/tacos" && (
+            <Link href="/tacos" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+              Friday Tacos!
+            </Link>
+          )}
+
+          {pathname !== "/intinerary" && (
+            <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+              Intinerary
+            </Link>
+          )}
+
+          {pathname !== "/bring" && (
+            <Link href="/bring" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+              What-To-Bring
+            </Link>
+          )}
+
+          {pathname !== "/carpool" && (
+            <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-purple-500">
+              Wanna Carpool?
+            </Link>
+          )}
+
+          {pathname !== "/gear" && (
+            <Link href="/gear" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+              Wanna gear up?
+            </Link>
+          )}
         </div>
 
 
+
         {/* Logo with background image (mobile view) */}
-        <div className="md:hidden absolute top-0 right-0 w-[160px] h-[80px] overflow-hidden">
+        <div className="lg:hidden absolute top-0 right-0 w-[160px] h-[80px] overflow-hidden">
           <Link href="/" passHref>
             <div className="w-[160px] h-[100px] bg-cover bg-center bg-no-repeat bg-[url('/BWLogo.png')] bg-black cursor-pointer transform scale-110 transition-transform duration-300 ease-in-out hover:scale-115">
               {/* Accessible text for screen readers */}
