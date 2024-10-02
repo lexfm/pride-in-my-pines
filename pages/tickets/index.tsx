@@ -18,7 +18,7 @@ export default function Tickets() {
           Check out some pics!
         </Link>
 
-        <h3 className="text-2xl font-extrabold dark:text-white text-center">You have two adventure options – Full Weekend Are Almost Gone!</h3>
+        <h3 className="text-2xl font-extrabold dark:text-white text-center">Weekend Sold Out – Grab Your Saturday Pass While You Can!</h3>
 
         <PaymentButtons />
       </div>
