@@ -18,9 +18,25 @@ export default function Tickets() {
           Check out some pics!
         </Link>
 
-        <h3 className="text-2xl font-extrabold dark:text-white text-center">Weekend Sold Out – Grab Your Saturday Pass While You Can!</h3>
-
         <PaymentButtons />
+        <h3 className="text-2xl font-extrabold dark:text-white text-center">Weekend Sold Out – Grab Your Saturday Pass While You Can, or Join our Waitlist below!</h3>
+        <div className="bg-gray-900 text-white p-6 rounded-lg shadow-lg">
+
+          <p className="text-lg text-gray-300 text-center mb-6">
+             Join our <span className="text-purple-500 font-semibold">exclusive waitlist</span> and be the first to know if any more weekend spots become available for this haunted outdoor adventure. 👻✨
+          </p>
+          <div className="text-center">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdTUJSIusuhiTtmpoTW79ur5_LkK7cYca7ovRFfftb3dIEp4g/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-orange-500 via-purple-700 to-black text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-purple-700 hover:via-black hover:to-orange-500 transition-colors duration-300 ease-in-out"
+            >
+              Join the Waitlist
+            </a>
+          </div>
+        </div>
+
       </div>
     </main>
   );
