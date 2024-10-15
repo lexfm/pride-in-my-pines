@@ -94,13 +94,13 @@ export default function Header() {
 
           {pathname !== "/carpool" && (
             <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-purple-500">
-              Wanna Carpool?
+              Need Carpool or Gear?
             </Link>
           )}
 
-          {pathname !== "/gear" && (
-            <Link href="/gear" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
-              Wanna gear up?
+          {pathname !== "/contribute" && (
+            <Link href="/contribute" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-purple-500">
+              Help Us Keeping The Magic!
             </Link>
           )}
         </div>
