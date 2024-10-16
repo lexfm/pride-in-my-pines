@@ -62,6 +62,25 @@ export default function Header() {
             ) : null
           }
 
+          {pathname === "/tickets" ?
+            (
+              <Link
+                className="w-[40%] relative mt-7 sm:left-[30vw] left-[16vw] rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+               bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
+      text-pink-500 
+      gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
+      text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
+      dark:hover:text-pink-700 hover:scale-105 transform transition duration-300 ease-in-out"
+                href="/earlybird"
+                target="_self"
+                rel="noopener noreferrer"
+              >
+                Early Bird 2025!
+              </Link>
+
+            ) : null
+          }
+
         </div>
 
 
