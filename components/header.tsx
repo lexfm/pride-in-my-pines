@@ -58,8 +58,10 @@ export default function Header() {
               >
                 Last tickets!
               </Link>
+
             ) : null
           }
+
         </div>
 
 

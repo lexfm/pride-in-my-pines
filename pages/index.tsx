@@ -79,21 +79,24 @@ export default function Home() {
       <section id="testimonials">
         <h3 className="text-2xl font-extrabold dark:text-white text-center mt-3 text">Check out our previous adventure!</h3>
         <ImageCarousel />
-        <div className="flex gap-6 items-center justify-center flex-wrap mt-3 mb-3">
+        <div className="flex flex-col gap-6 items-center justify-center flex-wrap mt-3 mb-3">
+          <h3 className="text-2xl font-extrabold dark:text-white text-center">Save your spot for out Next Adventure: Back to the 80s, May 2025 💃🏻🪩🕺🏽🌈👥 </h3>
+
           <Link
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-            bg-gradient-to-r from-orange-600 via-purple-800 to-black
-            text-white 
-            gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
-            text-lg sm:text-xl h-14 sm:h-16 px-6 sm:px-8 shadow-lg 
-            dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
-            href="/tickets"
+      bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
+      text-white 
+      gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
+      text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
+      dark:hover:text-yellow-500 hover:scale-105 transform transition duration-300 ease-in-out"
+            href="/earlybird"
             target="_self"
             rel="noopener noreferrer"
           >
-            Tickets Almost Gone!
+            Next Adventure: Early Bird!
           </Link>
         </div>
+
       </section>
     </>
   );
