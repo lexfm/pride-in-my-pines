@@ -7,11 +7,8 @@ export default function Carpool() {
 
             <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
 
-                <h3 className="text-2xl font-extrabold dark:text-white text-center"> Carpool for "The Ghosts, Gays, and Theys Outdoor Adventure" 👻🌈👥 It's Preferred but not required!</h3>
+                <h3 className="text-2xl font-extrabold dark:text-white text-center"> Looking for a ride or want to share yours to our epic camping trip? Join our carpool network and connect with fellow adventurers! 🚗💨</h3>
                 <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
-                    <p>
-                        Looking for a ride or want to share yours to our epic camping trip? Join our carpool network and connect with fellow adventurers! 🚗💨
-                    </p>
 
                     <p>How it works:</p>
 
