@@ -72,35 +72,29 @@ export default function Header() {
         <div className={`text-center absolute top-[100%] left-0 w-full bg-black lg:static lg:flex lg:w-auto flex-col lg:flex-row items-center gap-4 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible lg:opacity-100 lg:visible'}`}>
 
           {pathname !== "/tickets" && (
-            <Link href="/tickets" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+            <Link href="/tickets" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-pink-500">
               Adventure May 2025!
             </Link>
           )}
 
-          {pathname !== "/contribute" && (
-            <Link href="/contribute" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-purple-500">
-              Help Us Keeping The Magic!
-            </Link>
-          )}
-
           {pathname !== "/bring" && (
-            <Link href="/bring" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+            <Link href="/bring" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-pink-400 hover:via-orange-300 hover:to-yellow-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-pink-500">
               What-To-Bring
             </Link>
           )}
 
-
           {pathname !== "/intinerary" && (
-            <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+            <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-pink-500">
               Intinerary
             </Link>
           )}
 
           {pathname !== "/carpool" && (
-            <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-purple-500">
+            <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-pink-500">
               Need Carpool or Gear?
             </Link>
           )}
+
 
 
         </div>
