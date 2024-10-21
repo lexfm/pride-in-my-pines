@@ -43,34 +43,16 @@ export default function Header() {
         </div>
 
         <div className=" w-full absolute lg:hidden">
+
           {pathname === "/" ?
             (
               <Link
-                className="w-[40%] relative mt-7 left-[20vw] rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-               bg-gradient-to-r from-orange-600 via-purple-800 to-black
-               text-white 
-               gap-2 hover:bg-gradient-to-r hover:from-purple-800 hover:via-black hover:to-orange-600 
-               text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg sm:mt-[2rem]
-               dark:hover:text-purple-300 hover:scale-105 transform transition duration-300 ease-in-out"
-                href="/tickets"
-                target="_self"
-                rel="noopener noreferrer"
-              >
-                Last tickets!
-              </Link>
-
-            ) : null
-          }
-
-          {pathname === "/tickets" ?
-            (
-              <Link
                 className="w-[40%] relative mt-7 sm:left-[30vw] left-[16vw] rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-               bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
-      text-pink-500 
-      gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
-      text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
-      dark:hover:text-pink-700 hover:scale-105 transform transition duration-300 ease-in-out"
+                bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
+                text-pink-500 
+                gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
+                text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
+                dark:hover:text-pink-700 hover:scale-105 transform transition duration-300 ease-in-out"
                 href="/earlybird"
                 target="_self"
                 rel="noopener noreferrer"
@@ -91,19 +73,13 @@ export default function Header() {
 
           {pathname !== "/tickets" && (
             <Link href="/tickets" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-purple-800 hover:to-black transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
-              Tickets
+              Adventure May 2025!
             </Link>
           )}
 
-          {pathname !== "/tacos" && (
-            <Link href="/tacos" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
-              Friday Tacos!
-            </Link>
-          )}
-
-          {pathname !== "/intinerary" && (
-            <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
-              Intinerary
+          {pathname !== "/contribute" && (
+            <Link href="/contribute" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-purple-500">
+              Help Us Keeping The Magic!
             </Link>
           )}
 
@@ -113,17 +89,20 @@ export default function Header() {
             </Link>
           )}
 
+
+          {pathname !== "/intinerary" && (
+            <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-orange-600 hover:via-black hover:to-purple-800 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-orange-500">
+              Intinerary
+            </Link>
+          )}
+
           {pathname !== "/carpool" && (
             <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-purple-500">
               Need Carpool or Gear?
             </Link>
           )}
 
-          {pathname !== "/contribute" && (
-            <Link href="/contribute" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-black hover:to-orange-600 transition-all duration-300 ease-in-out lg:hover:bg-transparent lg:hover:text-purple-500">
-              Help Us Keeping The Magic!
-            </Link>
-          )}
+
         </div>
 
 
