@@ -1,5 +1,5 @@
 import ImageCarousel from "@/components/imageCarousel";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 
@@ -7,7 +7,13 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col gap-4 row-start-2 items-center items-start">
-
+        <Image
+          aria-hidden
+          src="/PIMPOctDates.png"
+          alt="Camp Flier"
+          width={700}
+          height={700}
+        />
         <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
 
 
@@ -16,7 +22,7 @@ export default function Home() {
 
           <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
             <p>
-              We couldn’t have done it without your energy, spirit, and love! 💖 Pictures coming soon 📸  Get ready to turn back time and gear up for the next epic journey: 80’s Odyssey—coming May 2025! 🌈🎸🕺 Don’t miss out on the neon, nostalgia, and nonstop fun! ✨ Save the date and stay tuned for early bird tickets!
+              We couldn’t have done it without your energy, spirit, and love! 💖 Pictures coming soon 📸  Get ready to turn back time and gear up for the next epic journey: 80’s Odyssey - coming May 2025! 🌈🎸🕺 Don’t miss out on the neon, nostalgia, and nonstop fun! ✨ Save the date and stay tuned for early bird tickets!
             </p>
 
           </div>

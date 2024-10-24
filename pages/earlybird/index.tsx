@@ -19,7 +19,7 @@ export default function EarlyBird() {
             <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
 
                 <p>
-                    Don’t miss out on the next unforgettable adventure! Join us for another weekend of fun, freedom, and friendship under the stars—this time, with an epic 80’s theme! 🌟 Book early to lock in your spot for the last weekend of May 2025. Early bird tickets are flying away fast—snag yours now and get ready for the next chapter of magic! 🌈✨
+                    Don’t miss out on the next unforgettable adventure! Join us for another weekend of fun, freedom, and friendship under the stars - this time, with an epic 80’s theme! 🌟 Book early to lock in your spot for the last weekend of May 2025. Early bird tickets are flying away fast - snag yours now and get ready for the next chapter of magic! 🌈✨
                 </p>
             </div>
 
