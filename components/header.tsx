@@ -77,17 +77,24 @@ export default function Header() {
             </Link>
           )}
 
+          {pathname !== "/archive" && (
+            <Link href="/archive" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
+              October 2024
+            </Link>
+          )}
+
           {pathname !== "/bring" && (
             <Link href="/bring" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-pink-400 hover:via-orange-300 hover:to-yellow-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
               What-To-Bring
             </Link>
           )}
 
-          {pathname !== "/intinerary" && (
+          {/* {pathname !== "/intinerary" && (
             <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
               Intinerary
             </Link>
-          )}
+          )} */}
+
 
           {pathname !== "/carpool" && (
             <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">

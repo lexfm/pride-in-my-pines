@@ -11,7 +11,7 @@ export default function EarlyBird() {
             
             <Image
                 aria-hidden
-                src="/earlyBirdMay25.png"
+                src="/Promo2025.jpg"
                 alt="EarlyBird"
                 width={700}
                 height={700}

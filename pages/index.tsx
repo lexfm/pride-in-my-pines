@@ -7,9 +7,12 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col gap-4 row-start-2 items-center items-start">
+        <h2 className="text-2xl font-extrabold dark:text-white text-center">
+          Get ready to turn back time and gear up for the next epic journey: 80’s Odyssey - coming May 2025! 🌈🎸🕺 Don’t miss out on the neon, nostalgia, and nonstop fun! ✨ Save the date and stay tuned for early bird tickets!
+        </h2>
         <Image
           aria-hidden
-          src="/PIMPOctDates.png"
+          src="/Promo2025.jpg"
           alt="Camp Flier"
           width={700}
           height={700}
@@ -17,15 +20,6 @@ export default function Home() {
         <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
 
 
-
-          <h2 className="text-4xl font-extrabold dark:text-white text-center">🎃 "Thank You for Making The Gays, Theys, and Ghosts Adventure a Haunting Success!" 👻</h2>
-
-          <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
-            <p>
-              We couldn’t have done it without your energy, spirit, and love! 💖 Pictures coming soon 📸  Get ready to turn back time and gear up for the next epic journey: 80’s Odyssey - coming May 2025! 🌈🎸🕺 Don’t miss out on the neon, nostalgia, and nonstop fun! ✨ Save the date and stay tuned for early bird tickets!
-            </p>
-
-          </div>
           <h3 className="text-2xl font-extrabold dark:text-white text-center">Save your spot for out Next Adventure: Back to the 80s, May 2025 💃🏻🪩🕺🏽🌈👥 </h3>
         </section>
         <Link
@@ -45,7 +39,7 @@ export default function Home() {
 
       <section className="contribute w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
 
-        <h3 className="text-2xl font-extrabold dark:text-white text-center pt-5">  Help Keep the Magic Alive! 👻🌈👥 </h3>
+        <h3 className="text-2xl font-extrabold dark:text-white text-center pt-5">  Help Keep the Magic Alive! 🪩💃🏻✨🕺🏽🌈 </h3>
 
         <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
 
@@ -69,7 +63,7 @@ export default function Home() {
 
           <p>Thank you for your generosity!</p>
 
-          <p>"The Ghosts, Gays and They’s Camping Adventure" by Pride In My Pines</p>
+          <p>"Back to 80's" by Pride In My Pines</p>
 
         </div>
 
