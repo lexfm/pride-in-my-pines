@@ -7,9 +7,6 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col gap-4 row-start-2 items-center items-start">
-        <h2 className="text-2xl font-extrabold dark:text-white text-center">
-          Get ready to turn back time and gear up for the next epic journey: 80’s Odyssey - coming May 2025! 🌈🎸🕺 Don’t miss out on the neon, nostalgia, and nonstop fun! ✨ Save the date and stay tuned for early bird tickets!
-        </h2>
         <Image
           aria-hidden
           src="/Promo2025.jpg"
@@ -19,6 +16,9 @@ export default function Home() {
         />
         <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
 
+          <h3 className="text-2xl font-extrabold dark:text-white text-center">
+            Get ready to turn back time and gear up for the next epic journey: Back to 80’s May 30th - June 1st 2025! 🌈🎸🕺 Don’t miss out on nostalgia and nonstop fun! ✨
+          </h3>
 
           <h3 className="text-2xl font-extrabold dark:text-white text-center">Save your spot for out Next Adventure: Back to the 80s, May 2025 💃🏻🪩🕺🏽🌈👥 </h3>
         </section>
