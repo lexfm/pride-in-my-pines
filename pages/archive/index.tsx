@@ -1,4 +1,3 @@
-import ImageCarousel from "@/components/imageCarousel";
 import Image from "next/image";
 import Link from 'next/link';
 
