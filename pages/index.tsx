@@ -1,9 +1,40 @@
+import fs from 'fs';
+import path from 'path';
 import ImageCarousel from "@/components/imageCarousel";
 import Image from "next/image";
 import Link from 'next/link';
 
+interface HomeProps {
+  images1: string[];
+  images2: string[];
+}
 
-export default function Home() {
+
+export async function getStaticProps() {
+  const oct2024Directory = path.join(process.cwd(), 'public', 'PIMP2024');
+  const april2024Directory = path.join(process.cwd(), 'public', 'testimonials');
+  const oct2024FileNames = fs.readdirSync(oct2024Directory);
+  const april2024FileNames = fs.readdirSync(april2024Directory);
+
+  const oct2024Images = oct2024FileNames.filter(file =>
+    /\.(jpe?g|png|gif)$/i.test(file) // Only images
+  ).map(fileName => `/PIMP2024/${fileName}`)
+
+  const april2024Images = april2024FileNames.filter(file =>
+    /\.(jpe?g|png|gif)$/i.test(file) // Only images
+  ).map(fileName => `/testimonials/${fileName}`)
+
+
+  return {
+    props: {
+      images1: oct2024Images,
+      images2: april2024Images
+    },
+  };
+}
+
+
+export default function Home({ images1, images2 }: HomeProps) {
   return (
     <>
       <main className="flex flex-col gap-4 row-start-2 items-center items-start">
@@ -62,15 +93,18 @@ export default function Home() {
           </div>
 
           <p>Thank you for your generosity!</p>
-
-          <p>"Back to 80's" by Pride In My Pines</p>
-
         </div>
 
       </section>
 
       <section id="testimonials">
-        <ImageCarousel />
+        <h3 className="text-2xl font-extrabold dark:text-white text-center pt-5">Previous adventures 💖✨</h3>
+        <p>Past adventures and memories are what make our community so special! We are so grateful for all the love and support we have received over the years. Here are some of the amazing memories from our past adventures! 🌈✨</p>
+        <h3 className="text-2xl font-extrabold dark:text-white text-center pt-5"> The Gays, Theys, and Ghosts (Oct 2024) 🎃👻🌙 </h3>
+        <ImageCarousel images={images1} />
+        <h3 className="text-2xl font-extrabold dark:text-white text-center pt-5"> Spring 2024 🌺🌈☀️ </h3>
+        <ImageCarousel images={images2} />
+
         <div className="flex flex-col gap-6 items-center justify-center flex-wrap mt-3 mb-3">
         </div>
 

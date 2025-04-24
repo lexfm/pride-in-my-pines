@@ -9,34 +9,12 @@ import 'swiper/css/navigation';
 // import required modules
 import { Keyboard, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
+type ImageCarouselProps = {
+  images: string[]
+}
 
 
-
-const ImageCarousel = () => {
-  // Array of images from the /public folder
-  const images = [
-    '/testimonials/Jeff.png',
-    '/testimonials/Acostado.png',
-    '/testimonials/Conchas.png',
-    '/testimonials/Lago.png',
-    '/testimonials/Teatro.png',
-    '/testimonials/Agusto.png',
-    '/testimonials/Grupo.png',
-    '/testimonials/Bbq.png',
-    '/testimonials/Bonitos.png',
-    '/testimonials/foto12.jpg',
-    '/testimonials/foto13.JPG',
-    '/testimonials/foto14.png',
-    '/testimonials/foto15.PNG',
-    '/testimonials/foto16.JPG',
-    '/testimonials/foto17.JPG',
-    '/testimonials/foto18.JPG',
-    '/testimonials/foto19.JPG',
-    '/testimonials/foto20.JPG',
-    '/testimonials/BonitosDias.png',
-    '/testimonials/InLove.png'
-  ];
-
+const ImageCarousel = ({ images }: ImageCarouselProps) => {
   return (
     <div className="w-full h-auto relative carousel">
       <Swiper
@@ -69,7 +47,7 @@ const ImageCarousel = () => {
                 src={image}
                 alt={`Slide ${index}`}
                 width={400} // Set an appropriate width
-                height={200} // Set an appropriate height
+                height={300} // Set an appropriate height
                 objectFit="cover"
                 className="object-cover w-full h-[300px] md:h-[500px]"
               />

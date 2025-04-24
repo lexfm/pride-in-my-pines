@@ -1,8 +1,31 @@
 import Image from "next/image";
 import Link from 'next/link';
+import fs from 'fs';
+import path from 'path';
+import ImageCarousel from "@/components/imageCarousel";
+
+interface HomeProps {
+  images: string[];
+}
+
+export async function getStaticProps() {
+  const imagesDirectory = path.join(process.cwd(), 'public', 'PIMP2024');
+  const filenames = fs.readdirSync(imagesDirectory);
+
+  const images = filenames.filter(file =>
+    /\.(jpe?g|png|gif)$/i.test(file) // Only images
+  ).map(fileName => `/PIMP2024/${fileName}`)
 
 
-export default function Home() {
+  return {
+    props: {
+      images
+    },
+  };
+}
+
+
+export default function Home({ images }: HomeProps) {
   return (
     <>
       <main className="flex flex-col gap-4 row-start-2 items-center items-start">
@@ -40,6 +63,7 @@ export default function Home() {
         >
           Next Adventure: Early Bird!
         </Link>
+        <ImageCarousel images={images} />
       </main>
     </>
   );
