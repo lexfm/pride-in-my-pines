@@ -48,7 +48,6 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
                 alt={`Slide ${index}`}
                 width={400} // Set an appropriate width
                 height={300} // Set an appropriate height
-                objectFit="cover"
                 className="object-cover w-full h-[300px] md:h-[500px]"
               />
             </SwiperSlide>
