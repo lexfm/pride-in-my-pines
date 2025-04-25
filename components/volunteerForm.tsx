@@ -16,7 +16,11 @@ interface Toast {
     message: string;
 }
 
-const VolunteerForm: React.FC = () => {
+interface VolunteerFormProps {
+    onSubmit: () => void; // Callback function to be called on form submission
+}
+
+const VolunteerForm: React.FC<VolunteerFormProps> = (props: VolunteerFormProps) => {
     const [formData, setFormData] = useState<FormData>({
         name: '',
         dob: '',
@@ -96,6 +100,7 @@ const VolunteerForm: React.FC = () => {
             if (response.ok) {
                 setFormSubmitted(true);
                 setToast({ type: 'success', message: 'Thank you for volunteering! We will contact you soon.' });
+                props.onSubmit(); // Call the parent function to handle form submission
                 // Auto-clear form
                 setFormData({
                     name: '',
