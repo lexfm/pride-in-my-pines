@@ -64,9 +64,9 @@ Pride in My Pines Committee 🌲
     // Email to Organizer
     await resend.emails.send({
       from: 'Pride in My Pines <noreply@updates.prideinmypines.com>',
-      // to: ['jrsoto@cox.net', 'jeffbrick@gmail.com', 'lex_fimbres@hotmail.com'], // Organizer email
-      to: ['lex_fimbres@hotmail.com'], // Organizer email
-      // cc: ['lexfimbres@gmail.com'], // Organizer email
+      to: ['jrsoto@cox.net', 'jeffbrick@gmail.com', 'lex_fimbres@hotmail.com'], // Organizer email
+      // to: ['lex_fimbres@hotmail.com'], // Organizer email
+      cc: ['lexfimbres@gmail.com'], // Organizer email
       subject: 'New Volunteer Signup Submission',
       text: organizerText,
       html: organizerHtml,
