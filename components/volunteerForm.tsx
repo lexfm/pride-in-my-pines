@@ -7,6 +7,7 @@ interface FormData {
     email: string;
     address: string;
     positions: string[];
+    website?: string; // Honeypot field
     consent: boolean;
 }
 
@@ -79,7 +80,7 @@ const VolunteerForm: React.FC = () => {
         e.preventDefault();
         if (!validateForm()) return;
 
-        if ((formData as any).website) {
+        if ((formData as FormData).website) {
             // If bot filled the honeypot field, silently stop processing.
             return;
         }
