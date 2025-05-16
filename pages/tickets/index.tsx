@@ -1,11 +1,11 @@
-
+import Link from "next/link";
 export default function Tickets() {
     return (
         <main className="container mx-auto px-4 py-8 flex flex-col items-center gap-8 max-w-4xl">
 
             <h3 className="text-2xl font-extrabold dark:text-white text-center">The Magic Continues: Back to 80s – May 2025!🌈👥 </h3>
-   
-            
+
+
             <p className="text-1xl font-bold text-center max-w-2xl mb-8">
                 Join us for an unforgettable weekend of pride, community, and amazing food! Choose the ticket that best suits your schedule.
             </p>
@@ -19,8 +19,8 @@ export default function Tickets() {
                             <p className="text-pink-100">Full Weekend Pass that includes all activities and festivities! Including the best costume and best decorated tent contest 👯⛺️✨</p>
                             <p className="text-pink-100">Enjoy fun with no limits!</p>
                         </div>
-                        <a 
-                            href="https://buy.stripe.com/cN2g2Tdxf27S6RicMR" 
+                        <a
+                            href="https://buy.stripe.com/cN2g2Tdxf27S6RicMR"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block w-full bg-white text-pink-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-pink-100 transition-colors duration-200"
@@ -38,8 +38,8 @@ export default function Tickets() {
                             <p className="text-purple-100">Access to all Saturday events 🥳</p>
                             <p className="text-purple-100">Save some memories for the day!</p>
                         </div>
-                        <a 
-                            href="https://buy.stripe.com/bIYdUL50JcMwejKbIK" 
+                        <a
+                            href="https://buy.stripe.com/bIYdUL50JcMwejKbIK"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block w-full bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-100 transition-colors duration-200"
@@ -49,6 +49,20 @@ export default function Tickets() {
                     </div>
                 </div>
             </div>
+
+            <Link
+                className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+            bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
+            text-pink-500 font-bold
+            gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
+            text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
+            dark:hover:text-yellow-500 hover:scale-105 transform transition duration-300 ease-in-out"
+                href="/"
+                target="_self"
+                rel="noopener noreferrer"
+            >
+                Back to Main Page
+            </Link>
 
         </main>
     );
