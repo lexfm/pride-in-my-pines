@@ -44,7 +44,7 @@ export default function Home({ images }: HomeProps) {
 
           <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
             <p>
-              We couldn’t have done it without your energy, spirit, and love! 💖 Pictures coming soon 📸  Get ready to turn back time and gear up for the next epic journey: 80’s Odyssey - coming May 2025! 🌈🎸🕺 Don’t miss out on the neon, nostalgia, and nonstop fun! ✨ Save the date and stay tuned for early bird tickets!
+              We couldn’t have done it without your energy, spirit, and love! 💖 Get ready to turn back time and gear up for the next epic journey: 80’s Odyssey - coming May 2025! 🌈🎸🕺 Don’t miss out on the neon, nostalgia, and nonstop fun! ✨ Save the date and stay tuned for early bird tickets!
             </p>
 
           </div>

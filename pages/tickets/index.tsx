@@ -1,42 +1,56 @@
-
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Tickets() {
-  return (
-    <main className="earlybird-section flex flex-col gap-4 row-start-2 items-center items-start">
+    return (
+        <main className="container mx-auto px-4 py-8 flex flex-col items-center gap-8 max-w-4xl">
 
-      <h3 className="text-2xl font-extrabold dark:text-white text-center">"The Magic Continues: Early Bird Adventure – May 2025!"🌈👥 </h3>
-      <h3 className="text-2xl font-extrabold dark:text-white text-center">🕺🎉 Get Ready to Flashback to the 80's! 🎉💃🏻</h3>
+            <h3 className="text-2xl font-extrabold dark:text-white text-center">The Magic Continues: Back to 80s – May 2025!🌈👥 </h3>
+   
+            
+            <p className="text-1xl font-bold text-center max-w-2xl mb-8">
+                Join us for an unforgettable weekend of pride, community, and amazing food! Choose the ticket that best suits your schedule.
+            </p>
 
-      <Image
-        aria-hidden
-        src="/Promo2025.jpg"
-        alt="EarlyBird"
-        width={700}
-        height={700}
-      />
-      <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
+            <div className="grid md:grid-cols-2 gap-8 w-full">
+                <div className="bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl shadow-lg overflow-hidden text-white transform hover:scale-105 transition-transform duration-300">
+                    <div className="p-8">
+                        <h2 className="text-2xl font-bold mb-4">Full Weekend Pass</h2>
+                        <div className="mb-6">
+                            <p className="text-3xl font-bold mb-2">$69</p>
+                            <p className="text-pink-100">Full Weekend Pass that includes all activities and festivities! Including the best costume and best decorated tent contest 👯⛺️✨</p>
+                            <p className="text-pink-100">Enjoy fun with no limits!</p>
+                        </div>
+                        <a 
+                            href="https://buy.stripe.com/cN2g2Tdxf27S6RicMR" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block w-full bg-white text-pink-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-pink-100 transition-colors duration-200"
+                        >
+                            Get FullWeekend Pass
+                        </a>
+                    </div>
+                </div>
 
-        <p>
-          Don’t miss out on the next unforgettable adventure! Join us for another weekend of fun, freedom, and friendship under the stars - this time, with an epic 80’s theme! 🌟 Book early to lock in your spot for the last weekend of May 2025. Early bird tickets are flying away fast - snag yours now and get ready for the next chapter of magic! 🌈✨
-        </p>
-      </div>
+                <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg overflow-hidden text-white transform hover:scale-105 transition-transform duration-300">
+                    <div className="p-8">
+                        <h2 className="text-2xl font-bold mb-4">Saturday Day Pass</h2>
+                        <div className="mb-6">
+                            <p className="text-3xl font-bold mb-2">$25</p>
+                            <p className="text-purple-100">Access to all Saturday events 🥳</p>
+                            <p className="text-purple-100">Save some memories for the day!</p>
+                        </div>
+                        <a 
+                            href="https://buy.stripe.com/bIYdUL50JcMwejKbIK" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block w-full bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-100 transition-colors duration-200"
+                        >
+                            Get Saturday DayPass
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-      <Link
-        className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-      bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
-      text-pink-500 
-      gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
-      text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
-      dark:hover:text-pink-700 hover:scale-105 transform transition duration-300 ease-in-out"
-        href="https://buy.stripe.com/cN2g2Tdxf27S6RicMR"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Save your spot for the 80's Oddisey!
-      </Link>
-
-    </main>
-  );
+        </main>
+    );
 }

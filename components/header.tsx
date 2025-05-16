@@ -53,11 +53,11 @@ export default function Header() {
                 gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
                 text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
                 dark:hover:text-pink-700 hover:scale-105 transform transition duration-300 ease-in-out"
-                href="/earlybird"
+                href="/tickets"
                 target="_self"
                 rel="noopener noreferrer"
               >
-                Early Bird 2025!
+                Tickets for back to 80s 2025!
               </Link>
 
             ) : null
@@ -66,14 +66,12 @@ export default function Header() {
         </div>
 
 
-
-
         {/* Navigation Items */}
         <div className={`text-center absolute top-[100%] left-0 w-full bg-black lg:static lg:flex lg:w-auto flex-col lg:flex-row items-center gap-4 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible lg:opacity-100 lg:visible'}`}>
 
           {pathname !== "/tickets" && (
             <Link href="/tickets" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
-              Adventure May 2025!
+              Tickets
             </Link>
           )}
 
@@ -83,9 +81,9 @@ export default function Header() {
             </Link>
           )}
 
-          {pathname !== "/archive" && (
-            <Link href="/archive" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
-              October 2024
+          {pathname !== "/food" && (
+            <Link href="/food" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
+              Dinning Options
             </Link>
           )}
 
@@ -95,18 +93,17 @@ export default function Header() {
             </Link>
           )}
 
+          {pathname !== "/archive" && (
+            <Link href="/archive" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
+              October 2024
+            </Link>
+          )}
+
           {/* {pathname !== "/intinerary" && (
             <Link href="/intinerary" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
               Intinerary
             </Link>
           )} */}
-
-          {pathname !== "/food" && (
-            <Link href="/food" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
-              Dinning Options
-            </Link>
-          )}
-
 
           {pathname !== "/carpool" && (
             <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">

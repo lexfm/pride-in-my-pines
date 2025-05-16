@@ -51,9 +51,9 @@ export default function Home({ images1, images2 }: HomeProps) {
             Get ready to turn back time and gear up for the next epic journey: Back to 80’s May 30th - June 1st 2025! 🌈🎸🕺 Don’t miss out on nostalgia and nonstop fun! ✨
           </h3>
 
-          <h3 className="text-2xl font-extrabold dark:text-white text-center">Save your spot for out Next Adventure: Back to the 80s, May 2025 💃🏻🪩🕺🏽🌈👥 </h3>
+          <h3 className="text-2xl font-extrabold dark:text-white text-center">LAST full weekend tickets available! Save your spot for out Next Adventure: Back to the 80s, May 2025 💃🏻🪩🕺🏽🌈👥 </h3>
         </section>
-        <Link
+        {/* <Link
           className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
             bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
             text-pink-500
@@ -65,6 +65,19 @@ export default function Home({ images1, images2 }: HomeProps) {
           rel="noopener noreferrer"
         >
           Next Adventure: Early Bird!
+        </Link> */}
+        <Link
+          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+            bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
+            text-pink-500 font-bold
+            gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
+            text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
+            dark:hover:text-yellow-500 hover:scale-105 transform transition duration-300 ease-in-out"
+          href="/tickets"
+          target="_self"
+          rel="noopener noreferrer"
+        >
+          Grab your tickets!
         </Link>
       </main>
 
