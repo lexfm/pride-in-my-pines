@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 interface FormData {
@@ -151,10 +152,24 @@ const VolunteerForm: React.FC<VolunteerFormProps> = (props: VolunteerFormProps) 
 
             {/* Success Message or Form */}
             {formSubmitted ? (
-                <div className="max-w-2xl mx-auto bg-green-700 text-white rounded-lg shadow-lg p-8 text-center">
+                <div className="max-w-2xl mx-auto bg-blue-700 text-white rounded-lg shadow-lg p-8 text-center">
                     <h2 className="text-3xl font-bold mb-4">Thank you for volunteering! 🎉</h2>
                     <p className="text-lg mt-4"> A confirmation message has been sent to the provided email. [Please make sure to check your Spam/Junk folder!] </p>
-                    <p className="text-lg">We appreciate your willingness to help. Our team will contact you soon!</p>
+                    <p className="text-lg">We appreciate your willingness to help. Our team will contact you soon! And here is the access to your special rate:</p>
+
+                    <Link
+                        className="w-[60%] mx-auto rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+                bg-gradient-to-r from-pink-400 via-yellow-300 to-green-400
+                text-pink-500 mt-4 font-bold
+                gap-2 hover:bg-gradient-to-r hover:from-green-400 hover:via-yellow-300 hover:to-pink-400 
+                text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
+                dark:hover:text-pink-400 hover:scale-105 transform transition duration-300 ease-in-out"
+                        href="https://buy.stripe.com/bJeeV6e2kao8d9Ndv47AI06"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Grab your special rate!💸
+                    </Link>
                 </div>
             ) : (
                 <form
@@ -162,8 +177,8 @@ const VolunteerForm: React.FC<VolunteerFormProps> = (props: VolunteerFormProps) 
                     className="max-w-2xl mx-auto bg-gray-900 shadow-lg rounded-lg p-8 border border-gray-700 text-gray-900"
                 >
                     <h2 className="text-3xl font-bold text-gray-100 mb-6 text-center">Volunteer Form</h2>
-                    <p className="text-center text-gray-300 mb-6">
-                        Become a volunteer and get 20% off! (Limited amount of volunteers)
+                    <p className="text-center text-gray-300 mb-6 font-bold text-lg">
+                        Become a volunteer and get 50% off!🤑 (Limited amount of volunteers) You'll get access to pay the special rate (Just $35) after submitting your form.✨ A P.I.M.P. committee member will contact you to follow up with details as well!
                     </p>
 
                     <div className="space-y-4">

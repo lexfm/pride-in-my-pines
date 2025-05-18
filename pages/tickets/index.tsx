@@ -48,6 +48,10 @@ export default function Tickets() {
                         </a>
                     </div>
                 </div>
+
+                <h3 className="text-lg font-extrabold dark:text-white text-center leading-relaxed">
+                    Would you like a special rate for volunteering? <Link href="/volunteer" className="text-pink-500 hover:text-blue-800 hover:underline ml-2 mr-2">Click here</Link> to learn more!
+                </h3>
             </div>
 
             <Link
