@@ -1,17 +1,12 @@
-import Image from "next/image";
-
+import Link from "next/link";
 
 export default function Carpool() {
     return (
         <main className="carpool-section">
-
             <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
-
-                <h3 className="text-2xl font-extrabold dark:text-white text-center"> Looking for a ride or want to share yours to our epic camping trip? Join our carpool network and connect with fellow adventurers! 🚗💨</h3>
+                <h3 className="text-2xl font-extrabold dark:text-white text-center">Looking for a ride or want to share yours to our epic camping trip? Join our carpool network and connect with fellow adventurers! 🚗💨</h3>
                 <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
-
                     <p>How it works:</p>
-
                     <ul className="list-disc list-inside">
                         <li>
                             Post your ride: If you have a car, let us know your starting point, destination, and any available seats.
@@ -20,13 +15,11 @@ export default function Carpool() {
                             Find a ride: Looking for a seat? Search for rides from your area and connect with drivers.
                         </li>
                     </ul>
-
                     <p>Let's share the road and the adventure together! 🛣️✨</p>
-
                     <p>
                         Go to our
                         <a
-                            href="http://www.groupcarpool.com/t/4tgs3m"
+                            href="https://www.groupcarpool.com/t/c8itqk"
                             target="_blank"
                             className="text-blue-500 hover:underline ml-2 mr-2"
                             rel="noopener noreferrer"
@@ -36,61 +29,20 @@ export default function Carpool() {
                         page for more information.
                     </p>
                 </div>
-            </section>
-            <section className="gear-section pt-4">
 
-                <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
-
-                    <h3 className="text-2xl font-extrabold dark:text-white text-center"> Do you need Gear?</h3>
-
-                    <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
-
-                        <p>
-                            If anyone wants to rent camping gear, please check out REI Rentals.
-                        </p>
-
-                        <p>Here is the link to find the local REI rental to you:
-                            <a
-                                href="https://www.rei.com/stores/rentals?srsltid=AfmBOoq8JDf94-XUZIWGWrhwQhkByyq1O8BQDARksMjdOdRZuPlhucje&fbclid=IwZXh0bgNhZW0CMTAAAR2H6knPK9yeyRtdqKsVHS3vPTkDUEmwqT5wVpxQySntZzhaClgckHtVq5I_aem_QN4flhHERlnr7_-r0OEQ0Q#locations"
-                                target="_blank"
-                                className="text-blue-500 hover:underline ml-2 mr-2"
-                                rel="noopener noreferrer"
-                            >
-                                REI Rentals
-                            </a>
-                        </p>
-                        <p>
-                            We pulled the following information from the San Diego location. Each package is based on 2 day rental for one person. Of course, if you are planning for two people,costs would be different:
-                        </p>
-                    </div>
-                    <div className="payments flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
-
-
-                        <div className="flex flex-col items-center justify-center">
-                            Simple Option:
-                            <Image
-                                aria-hidden
-                                src="/rentals/simple.png"
-                                alt="Taco Menu"
-                                width={400}
-                                height={400}
-                            />
-                        </div>
-
-                        <div className="flex flex-col items-center justify-center">
-                            Deluxe Option:
-                            <Image
-                                aria-hidden
-                                src="/rentals/deluxe.png"
-                                alt="Taco Menu"
-                                width={400}
-                                height={400}
-                            />
-                        </div>
-
-                    </div>
-                </section>
-
+                <Link
+                    className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+                    bg-gradient-to-r from-pink-400 via-yellow-300 to-green-400
+                    text-pink-500 font-bold
+                    gap-2 hover:bg-gradient-to-r hover:from-green-400 hover:via-yellow-300 hover:to-pink-400 
+                    text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
+                    dark:hover:text-pink-400 hover:scale-105 transform transition duration-300 ease-in-out mt-8"
+                    href="/"
+                    target="_self"
+                    rel="noopener noreferrer"
+                >
+                    Back to Home
+                </Link>
             </section>
         </main>
     );

@@ -158,10 +158,6 @@ const EventDay: React.FC<{ day: string; events: EventItem[] }> = ({ day, events 
 export default function Itinerary() {
     return (
         <main className="container mx-auto px-4 py-8 flex flex-col items-center gap-8 max-w-4xl">
-            <h1 className="text-4xl font-extrabold text-white text-center mb-4">
-                Back to 80s! Itinerary
-            </h1>
-            
             <p className="text-xl text-gray-300 text-center max-w-2xl mb-8">
                 Welcome to our Back to 80s Itinerary! This is dedicated to give you all the information needed for what's to come! 
                 Reminder to dress up, dress out, and decorate those tents for a chance to win wonderful prizes!!! 🌈
