@@ -105,6 +105,12 @@ export default function Header() {
             </Link>
           )} */}
 
+          {pathname !== "/contact" && (
+            <Link href="/contact" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
+              Contact
+            </Link>
+          )}
+
           {pathname !== "/carpool" && (
             <Link href="/carpool" className="px-4 py-2 block text-lg font-semibold text-white hover:bg-gradient-to-r hover:from-yellow-300 hover:via-pink-400 hover:to-orange-300 transition-all duration-300 ease-in-out lg:hover:bg-transparent hover:text-pink-500">
               Need Carpool or Gear?
