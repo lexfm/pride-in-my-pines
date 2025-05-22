@@ -19,7 +19,7 @@ export default function Contact() {
             <Link
                 className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
                 bg-gradient-to-r from-pink-400 via-yellow-300 to-green-400
-                text-green-600 font-bold
+                text-pink-500 font-bold
                 gap-2 hover:bg-gradient-to-r hover:from-green-400 hover:via-yellow-300 hover:to-pink-400 
                 text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
                 dark:hover:text-pink-400 hover:scale-105 transform transition duration-300 ease-in-out"
