@@ -9,7 +9,7 @@ export default function Contact() {
                 Get in Touch
             </h1>
             
-            <p className="text-lg text-gray-700 dark:text-gray-300 text-center max-w-2xl mb-8">
+            <p className="text-2xl dark:text-white font-extrabold text-center max-w-2xl mb-8">
                 Have questions about Pride in My Pines? Want to provide feedback or explore partnership opportunities? 
                 We're here to help and would love to hear from you! 🌈
             </p>
