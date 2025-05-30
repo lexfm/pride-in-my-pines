@@ -16,7 +16,7 @@ export default function Tickets() {
                         <h2 className="text-2xl font-bold mb-4">Full Weekend Pass</h2>
                         <div className="mb-6">
                             <p className="text-3xl font-bold mb-2">$69</p>
-                            <p className="text-pink-100">Full Weekend Pass that includes all activities and festivities! Including the best costume and best decorated tent contest 👯⛺️✨</p>
+                            <p className="text-pink-100">Full Weekend Pass that includes all activities and festivities! Including social hours, 80s karaoke, onesie party, the best decorated campsite contest and more! 🎉👯⛺️✨</p>
                             <p className="text-pink-100">Enjoy fun with no limits!</p>
                         </div>
                         <a
