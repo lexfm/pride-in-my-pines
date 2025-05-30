@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ImagePopup from '@/components/ImagePopup';
 
 interface EventItem {
     time: string;
@@ -190,6 +191,14 @@ export default function Itinerary() {
                 Welcome to our Back to 80s Itinerary! This is dedicated to give you all the information needed for what's to come! 
                 Reminder to dress up, dress out, and decorate those tents for a chance to win wonderful prizes!!! 🌈
             </p>
+
+            <div className="text-center mb-4">
+                <ImagePopup 
+                    src="/campMap.jpg"
+                    alt="Camp Map"
+                    linkText="Camp Map here!"
+                />
+            </div>
 
             <div className="w-full">
                 <EventDay day="May 30 (Friday) - Event Day 1" events={fridayEvents} />
