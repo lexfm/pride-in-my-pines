@@ -69,7 +69,7 @@ export default function Home({ images1, images2 }: HomeProps) {
                 <li>Group breakfast on Saturday & Sunday morning</li>
                 <li> Social Hour Provided Friday & Saturday Nights 5-6PM</li>
                 <li> 80s themed Karaoke Night with Incredible Prizes</li>
-                <li>Best Decorated Tent & Costume Contest </li>
+                <li> Themed Campsite Decorating Contest </li>
                 <li>Large Outdoor Movie Ampitheater - Movies under the stars Friday & Saturday</li>
                 <li>80s throwback! - Bring your best 80s outfit!</li>
                 <li>Embark on a group scenic hike! Explore the beauty of the surrounding landscape and get your heart pumping.</li>

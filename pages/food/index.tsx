@@ -15,7 +15,7 @@ export default function Food() {
                     <a
                         href="https://www.instagram.com/lacocinadelabuelo.sd/?hl=en"
                         target="_blank"
-                        className="inline-block text-blue-600 hover:text-blue-800 hover:underline mx-2 transition-colors duration-200"
+                        className="inline-block text-pink-600 hover:text-blue-800 text-xl font-bold hover:underline mx-2 transition-colors duration-200"
                         rel="noopener noreferrer"
                     >
                         La Cocina del Abuelo

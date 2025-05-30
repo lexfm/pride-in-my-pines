@@ -6,6 +6,7 @@ interface EventItem {
     title: string;
     description: string;
     location?: string;
+    link?: React.ReactNode;
 }
 
 const fridayEvents: EventItem[] = [
@@ -23,9 +24,14 @@ const fridayEvents: EventItem[] = [
     },
     {
         time: "6:00 PM",
-        title: "Dinner",
-        description: "Enjoy delicious food from our food trucks",
-        location: "Upper Level"
+        title: "Dinner - Cocina del Abuelo",
+        description: "Birria, tacos, burritos, and more!",
+        location: "Camp 29 - Upper level semi-circle entrance",
+        link: (
+          <Link href="/food" className="text-pink-500 hover:text-pink-400 underline text-md font-bold">
+            Check menu here
+          </Link>
+        ),
     },
     {
         time: "8:00 PM",
@@ -51,19 +57,25 @@ const saturdayEvents: EventItem[] = [
     {
         time: "8:00 AM",
         title: "Breakfast",
-        description: "Start your day with a hearty meal",
-        location: "Upper Level"
+        description: "Start your day with a hearty meal: Pancakes and eggs",
+        location: "Camp 46 - Upper level semi-circle center"
     },
     {
         time: "9:00 AM",
         title: "Morning Guided Hike",
-        description: "Explore the beautiful surroundings",
-        location: "Upper Level"
+        description: "Explore the beautiful surroundings with other campers!",
+        location: "Lakeshore Picnic Area"
+    },
+    {
+        time: "10:00 AM - 12:00 PM",
+        title: "Explore campgrounds at your leisure",
+        description: "E-bikes and boats available for rent at the boating dock",
+        location: "Lakeshore Picnic Area"
     },
     {
         time: "12:00 PM",
         title: "Lunch",
-        description: "Enjoy a lakeside picnic",
+        description: "Enjoy a lakeside picnic with Hot Dogs and Mac-n-Cheese",
         location: "Lakeshore Picnic Area"
     },
     {
@@ -86,9 +98,14 @@ const saturdayEvents: EventItem[] = [
     },
     {
         time: "6:00 PM",
-        title: "Dinner",
-        description: "Enjoy delicious food from our food trucks",
-        location: "Upper Level"
+        title: "Dinner - Cocina del Abuelo",
+        description: "Cheeseburgers, nachos, and more! (check menu here)",
+        location: "Camp 29 - Upper level semi-circle entrance",
+        link: (
+          <Link href="/food" className="text-pink-500 hover:text-pink-400 underline text-md font-bold">
+            Check menu here
+          </Link>
+        ),
     },
     {
         time: "8:00 PM",
@@ -114,8 +131,14 @@ const sundayEvents: EventItem[] = [
     {
         time: "8:00 AM",
         title: "Breakfast",
-        description: "One last meal together",
-        location: "Upper Level"
+        description: "One last meal together: Eggs and tater tots",
+        location: "Camp 46 - Upper level semi-circle center"
+    },
+    {
+        time: "9:00 AM",
+        title: "Farewell Gathering",
+        description: "Say goodbye to your new friends, until next time!",
+        location: "Amphitheater"
     },
     {
         time: "10:00 AM",
@@ -147,6 +170,11 @@ const EventDay: React.FC<{ day: string; events: EventItem[] }> = ({ day, events 
                                     📍 {event.location}
                                 </p>
                             )}
+                            {event.link && (
+                                <p className="text-gray-400 text-sm mt-1">
+                                    {event.link}
+                                </p>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -157,8 +185,8 @@ const EventDay: React.FC<{ day: string; events: EventItem[] }> = ({ day, events 
 
 export default function Itinerary() {
     return (
-        <main className="container mx-auto px-4 py-8 flex flex-col items-center gap-8 max-w-4xl">
-            <p className="text-xl text-gray-300 text-center max-w-2xl mb-8">
+        <main className="container mx-auto px-4 py-4 flex flex-col items-center gap-4 max-w-4xl">
+            <p className="text-xl text-gray-300 text-center max-w-2xl">
                 Welcome to our Back to 80s Itinerary! This is dedicated to give you all the information needed for what's to come! 
                 Reminder to dress up, dress out, and decorate those tents for a chance to win wonderful prizes!!! 🌈
             </p>
