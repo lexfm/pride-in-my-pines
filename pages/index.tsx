@@ -45,7 +45,7 @@ export default function Home({ images1, images2 }: HomeProps) {
             <h3 className="text-2xl font-extrabold dark:text-white text-center mb-5">LAST full weekend tickets available!🎟️💨 </h3>
 
             <Link
-              className="w-[50%] mx-auto rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
+              className="w-[55%] mx-auto rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
           bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
           text-pink-500 font-bold
           gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
@@ -98,9 +98,7 @@ export default function Home({ images1, images2 }: HomeProps) {
               </p>
 
               <p>
-                <b>For dinner you can either bring your own food(or Your Own Cook!)</b> , but Casa del Abuelo food truck will be on site both nights, check the menu for both nights <Link href="/food" target="_self" rel="noopener noreferrer" className="text-blue-500 hover:underline ml-2 mr-2">here</Link>! Take advantage of the provided charcoal grill pits, and water access for a hassle-free culinary experience.
-              </p>
-
+                <b>For dinner you can either bring your own food(or Your Own Cook!)</b> , but Casa del Abuelo food truck will be on site both nights, check the menu for both nights <Link href="/food" target="_self" rel="noopener noreferrer" className="text-blue-500 hover:underline ml-2 mr-2">here</Link>!           </p>
               <p>
                 <b> Don't forget your bike or e-bike!</b> Explore the breathtaking surroundings on two wheels.
               </p>

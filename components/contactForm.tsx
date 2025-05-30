@@ -162,7 +162,6 @@ const ContactForm: React.FC = () => {
                                 <option value="General Inquiry">General Inquiry</option>
                                 <option value="Feedback">Feedback</option>
                                 <option value="Partnership">Partnership Opportunity</option>
-                                <option value="Press">Press Inquiry</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>

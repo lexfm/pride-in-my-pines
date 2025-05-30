@@ -4,12 +4,8 @@ import Link from 'next/link';
 
 export default function Contact() {
     return (
-        <main className="container mx-auto px-4 py-8 flex flex-col items-center gap-8 max-w-4xl">
-            <h1 className="text-3xl font-extrabold dark:text-white text-center mb-4">
-                Get in Touch
-            </h1>
-            
-            <p className="text-2xl dark:text-white font-extrabold text-center max-w-2xl mb-8">
+        <main className="container mx-auto px-4 py-4 flex flex-col items-center gap-4 max-w-4xl">
+            <p className="text-lg dark:text-white font-extrabold text-center max-w-2xl mb-4">
                 Have questions about Pride in My Pines? Want to provide feedback or explore partnership opportunities? 
                 We're here to help and would love to hear from you! 🌈
             </p>
