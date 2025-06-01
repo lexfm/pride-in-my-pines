@@ -38,79 +38,16 @@ export default function Home({ images1, images2 }: HomeProps) {
   return (
     <>
       <main className="flex flex-col gap-4 row-start-2 items-center items-start">
-        <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">
-          <div>
-            <h2 className="text-4xl font-extrabold dark:text-white text-center">Back to 80s Camping Adventure 💃🏻🪩🕺🏽🌈</h2>
-            <h3 className="text-2xl font-extrabold dark:text-white text-center">Calling all San Diego LGBTQ+ Adventurers!🏕️🎸🎤</h3>
-            <h3 className="text-2xl font-extrabold dark:text-white text-center mb-5">LAST full weekend tickets available!🎟️💨 </h3>
+        <section className="w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto text-gray-400 leading-relaxed space-y-4 mt-5 text-xl">
+          <h3 className="text-4xl font-extrabold dark:text-white text-center">Back to the 80s Camping Adventure 💃🏻🪩🕺🏽🌈</h3>
+          <p>Thank you for making this year's Back to the 80s a spectacular success! We had an absolute blast and loved seeing all your neon, nostalgia, stellar karaoke performances, and dance moves.</p>
+          <p>We hope the weekend was full of unforgettable memories, good vibes, and new friendships! 🎉👯⛺️✨</p>
+          <p>If you have any pictures or videos from the weekend, please tag us on Instagram  <Link href="https://www.instagram.com/prideinmypines/" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-400 underline">Instagram</Link>! #prideinmypines #backto80s or also share in our <Link href="https://www.facebook.com/groups/prideinmypines/" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-400 underline">Facebook Group</Link>!</p>
+          <p>Stay tuned for our next adventure:coming the weekend before Halloween in October. Keep an eye out for our early bird tickets! Until next time!</p>
 
-            <Link
-              className="w-[55%] mx-auto rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-          bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
-          text-pink-500 font-bold
-          gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
-          text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
-          dark:hover:text-yellow-500 hover:scale-105 transform transition duration-300 ease-in-out"
-              href="/tickets"
-              target="_self"
-              rel="noopener noreferrer"
-            >
-              Grab your tickets!
-            </Link>
+          <p><strong>Hosted by P.I.M.P – Pride In My Pines</strong></p>
 
-            <div className="text-gray-400 text-xl leading-relaxed space-y-4 mt-5">
-              <p>
-                Join a group of like minded but diverse group of new friends who love nature, hiking, camping and sharing stories around a campfire with their furry pet friends. Just 30 mins away from San Diego, the breathtaking views of Lake Dixon will surely be a memorable experience through nature and fun 80's nostalgia themed activities. Check out everything you can expect below.
-                Don't miss out - Spots are limited! RSVP and secure your place today!
-              </p>
-              <p>Here's what awaits you:</p>
 
-              <ul className="list-disc list-inside space-y-2">
-                <li>Group breakfast on Saturday & Sunday morning</li>
-                <li> Social Hour Provided Friday & Saturday Nights 5-6PM</li>
-                <li> 80s themed Karaoke Night with Incredible Prizes</li>
-                <li> Themed Campsite Decorating Contest </li>
-                <li>Large Outdoor Movie Ampitheater - Movies under the stars Friday & Saturday</li>
-                <li>80s throwback! - Bring your best 80s outfit!</li>
-                <li>Embark on a group scenic hike! Explore the beauty of the surrounding landscape and get your heart pumping.</li>
-                <li>Group bbq on Saturday by the lake</li>
-                <li>Fun Games & Activities - Await at our private and secluded campsite. We’ll have the following; Volleyball, Cornhole, Flipcup and beer pong to name a few! </li>
-                <li>Even friends who can't camp can join the festivities! - Day Passes include lunch bbq, activities at the lake, 80s karaoke, and movie night.</li>
-                <li>Relax and unwind by the campfire, share stories under the stars, and enjoy the stunning scenery. Whether you're an avid hiker or simply seeking a relaxing escape, there's something for everyone.</li>
-                <li>For the RV enthusiasts and glamping aficionados - Please Contact us directly for your questions</li>
-              </ul>
-
-              <p>
-                <b>Peace of mind is key!</b> Enjoy the convenience of on-site bathroom and shower facilities, 1 Shower token provided. More shower tokens can be purchased directly from the concession stand.
-              </p>
-
-              <p>
-                <b>Feeling adventurous? </b> Explore the lake with rowboats, motorboats, or paddle boats available for rent (not included). Please visit
-                <a
-                  href="https://www.camplife.com/campground/Dixon+Lake+Recreation+Area"
-                  target="_blank"
-                  className="text-blue-500 hover:underline ml-2 mr-2"
-                  rel="noopener noreferrer"
-                >
-                  Dixon Lake Recreation Area
-                </a>
-                for more information.
-              </p>
-
-              <p>
-                <b>For dinner you can either bring your own food(or Your Own Cook!)</b> , but Casa del Abuelo food truck will be on site both nights, check the menu for both nights <Link href="/food" target="_self" rel="noopener noreferrer" className="text-blue-500 hover:underline ml-2 mr-2">here</Link>!           </p>
-              <p>
-                <b> Don't forget your bike or e-bike!</b> Explore the breathtaking surroundings on two wheels.
-              </p>
-
-              <p>
-                <b>Need camping gear? </b> We have a network of generous campers willing to share! Just DM us to connect.
-              </p>
-
-              <p><b>This is your chance to escape the ordinary and embrace an extraordinary adventure. RSVP now and secure your spot!</b></p>
-              <p><b>Back to 80s - Hosted by P.I.M.P - Pride In My Pines</b></p>
-            </div>
-          </div>
         </section>
         <Image
           aria-hidden
@@ -119,19 +56,6 @@ export default function Home({ images1, images2 }: HomeProps) {
           width={700}
           height={700}
         />
-        <Link
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-            bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
-            text-pink-500 font-bold
-            gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
-            text-lg sm:text-xl h-11 sm:h-16 px-2 sm:px-4 shadow-lg 
-            dark:hover:text-yellow-500 hover:scale-105 transform transition duration-300 ease-in-out"
-          href="/tickets"
-          target="_self"
-          rel="noopener noreferrer"
-        >
-          Tickets!
-        </Link>
       </main>
 
       <section className="contribute w-[90vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto">

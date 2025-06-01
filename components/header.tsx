@@ -44,24 +44,6 @@ export default function Header() {
 
         <div className=" w-full absolute lg:hidden">
 
-          {pathname === "/" ?
-            (
-              <Link
-                className="w-[50%] relative mt-7 sm:left-[30vw] left-[13vw] rounded-full border border-solid border-transparent transition-colors flex items-center justify-center 
-                bg-gradient-to-r from-green-400 via-yellow-300 to-pink-400
-                text-pink-500 font-bold z-50
-                gap-2 hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-300 hover:to-green-400 
-                text-lg sm:text-xl h-12 sm:h-16 px-8 sm:px-4 shadow-lg 
-                dark:hover:text-pink-700 hover:scale-105 transform transition duration-300 ease-in-out"
-                href="/itinerary"
-                target="_self"
-                rel="noopener noreferrer"
-              >
-                Itinerary here!
-              </Link>
-
-            ) : null
-          }
 
         </div>
 
