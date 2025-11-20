@@ -13,6 +13,17 @@ interface Toast {
     message: string;
 }
 
+// Type definition for reCAPTCHA
+interface ReCaptchaInstance {
+    execute: (siteKey: string | undefined, options: { action: string }) => Promise<string>;
+}
+
+declare global {
+    interface Window {
+        grecaptcha?: ReCaptchaInstance;
+    }
+}
+
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
         name: '',
@@ -96,9 +107,9 @@ const ContactForm: React.FC = () => {
         try {
             // Get reCAPTCHA token
             let recaptchaToken = '';
-            if (typeof window !== 'undefined' && (window as any).grecaptcha) {
+            if (typeof window !== 'undefined' && window.grecaptcha) {
                 try {
-                    recaptchaToken = await (window as any).grecaptcha.execute(
+                    recaptchaToken = await window.grecaptcha.execute(
                         process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
                         { action: 'contact_form' }
                     );
