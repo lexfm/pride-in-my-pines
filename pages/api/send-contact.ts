@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Resend } from 'resend';
 import { validateFormSubmission, getClientIp, recordSubmission } from '../../api/lib/antiSpam';
+import { getCommitteeEmails, getCommitteeCCEmails, getSenderEmail } from '../../api/lib/emailConfig';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -75,9 +76,9 @@ Pride in My Pines Committee 🌲
   try {
     // Email to Committee
     await resend.emails.send({
-      from: 'Pride in My Pines <noreply@updates.prideinmypines.com>',
-      to: ['jrsoto@cox.net', 'jeffbrick@gmail.com', 'lex_fimbres@hotmail.com'],
-      cc: ['lexfimbres@gmail.com'],
+      from: getSenderEmail(),
+      to: getCommitteeEmails(),
+      cc: getCommitteeCCEmails(),
       subject: `New Contact Form Submission: ${subject}`,
       text: committeeText,
       html: committeeHtml,
@@ -85,7 +86,7 @@ Pride in My Pines Committee 🌲
 
     // Confirmation Email to Sender
     await resend.emails.send({
-      from: 'Pride in My Pines <noreply@updates.prideinmypines.com>',
+      from: getSenderEmail(),
       to: [email],
       subject: 'Thank You for Contacting Pride in My Pines!',
       text: senderText,
