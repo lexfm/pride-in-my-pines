@@ -89,9 +89,9 @@ const ContactForm: React.FC = () => {
             return;
         }
 
-        // Anti-spam check 2: Time-based validation (form must be open for at least 3 seconds)
+        // Anti-spam check 2: Time-based validation (form must be open for at least 5 seconds)
         const timeSpent = Date.now() - formLoadTime.current;
-        if (timeSpent < 3000) {
+        if (timeSpent < 5000) {
             console.warn('Form submitted too quickly');
             setToast({ type: 'error', message: 'Please take your time filling out the form.' });
             return;

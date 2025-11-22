@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Rate limiting: Track IP addresses and submission timestamps
 const submissionTracker = new Map<string, number[]>();
-const MAX_SUBMISSIONS_PER_HOUR = 3;
+const MAX_SUBMISSIONS_PER_HOUR = 2; // Reduced from 3 to 2
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
 
 // Clean up old entries every 10 minutes
@@ -65,7 +65,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   // Anti-spam check 2: Time-based validation
-  if (typeof timeSpent === 'number' && timeSpent < 3000) {
+  if (typeof timeSpent === 'number' && timeSpent < 5000) {
     console.warn('Form submitted too quickly - potential bot');
     return res.status(400).json({ message: 'Please take your time filling out the form.' });
   }
@@ -83,13 +83,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
   }
 
-  // Anti-spam check 4: reCAPTCHA verification (if configured)
-  if (process.env.RECAPTCHA_SECRET_KEY && recaptchaToken) {
+  // Anti-spam check 4: reCAPTCHA verification (REQUIRED if not configured, fail without it)
+  if (!process.env.RECAPTCHA_SECRET_KEY) {
+    // If reCAPTCHA is not configured, apply stricter validation
+    console.warn('⚠️ reCAPTCHA not configured - using strict validation');
+  } else if (recaptchaToken) {
     const isHuman = await verifyRecaptcha(recaptchaToken);
     if (!isHuman) {
       console.warn('reCAPTCHA verification failed - potential bot');
       return res.status(400).json({ message: 'Verification failed. Please try again.' });
     }
+  } else {
+    // reCAPTCHA is configured but no token provided - reject
+    console.warn('reCAPTCHA token missing');
+    return res.status(400).json({ message: 'Security verification required.' });
   }
 
   // Validate required fields
@@ -99,14 +106,36 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Additional validation: Check for suspicious patterns
   const suspiciousPatterns = [
-    /https?:\/\//gi, // URLs in name field
-    /<script/gi,     // Script tags
-    /\[url=/gi,      // BBCode links
+    /https?:\/\//gi,        // URLs in name field
+    /<script/gi,            // Script tags
+    /\[url=/gi,             // BBCode links
+    /[A-Z]{5,}/g,           // Multiple uppercase letters (like "MqNiGBnYMtPiGyanjNtUdLw")
+    /^[a-zA-Z]{15,}$/,      // Very long strings without spaces (gibberish)
+    /(.)\1{4,}/,            // Same character repeated 5+ times
   ];
 
   if (suspiciousPatterns.some(pattern => pattern.test(name))) {
-    console.warn('Suspicious content detected in name field');
+    console.warn('Suspicious content detected in name field:', name);
     return res.status(400).json({ message: 'Invalid content detected.' });
+  }
+
+  if (suspiciousPatterns.some(pattern => pattern.test(message))) {
+    console.warn('Suspicious content detected in message field:', message);
+    return res.status(400).json({ message: 'Invalid content detected.' });
+  }
+
+  // Check for gibberish text (low vowel-to-consonant ratio)
+  const checkGibberish = (text: string): boolean => {
+    const cleaned = text.replace(/[^a-zA-Z]/g, '');
+    if (cleaned.length < 10) return false;
+    const vowels = (cleaned.match(/[aeiou]/gi) || []).length;
+    const ratio = vowels / cleaned.length;
+    return ratio < 0.15; // Less than 15% vowels = likely gibberish
+  };
+
+  if (checkGibberish(name) || checkGibberish(message)) {
+    console.warn('Gibberish detected:', { name, message });
+    return res.status(400).json({ message: 'Please enter valid text.' });
   }
 
   // Committee Message - Plain Text and HTML
