@@ -1,5 +1,5 @@
 // import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface FormData {
     name: string;
@@ -19,6 +19,17 @@ interface Toast {
 
 interface VolunteerFormProps {
     onSubmit: () => void; // Callback function to be called on form submission
+}
+
+// Type definition for reCAPTCHA
+interface ReCaptchaInstance {
+    execute: (siteKey: string | undefined, options: { action: string }) => Promise<string>;
+}
+
+declare global {
+    interface Window {
+        grecaptcha?: ReCaptchaInstance;
+    }
 }
 
 const VolunteerForm: React.FC<VolunteerFormProps> = (props: VolunteerFormProps) => {
@@ -44,6 +55,27 @@ const VolunteerForm: React.FC<VolunteerFormProps> = (props: VolunteerFormProps) 
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [toast, setToast] = useState<Toast | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    
+    // Anti-spam: Track form load time
+    const formLoadTime = useRef<number>(Date.now());
+    const hasInteracted = useRef<boolean>(false);
+    
+    useEffect(() => {
+        // Track user interaction (mouse movement, keyboard input)
+        const handleInteraction = () => {
+            hasInteracted.current = true;
+        };
+        
+        window.addEventListener('mousemove', handleInteraction, { once: true });
+        window.addEventListener('keydown', handleInteraction, { once: true });
+        window.addEventListener('touchstart', handleInteraction, { once: true });
+        
+        return () => {
+            window.removeEventListener('mousemove', handleInteraction);
+            window.removeEventListener('keydown', handleInteraction);
+            window.removeEventListener('touchstart', handleInteraction);
+        };
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type, checked } = e.target as HTMLInputElement;
@@ -85,17 +117,50 @@ const VolunteerForm: React.FC<VolunteerFormProps> = (props: VolunteerFormProps) 
         e.preventDefault();
         if (!validateForm()) return;
 
+        // Anti-spam check 1: Honeypot field
         if ((formData as FormData).website) {
             // If bot filled the honeypot field, silently stop processing.
+            console.warn('Honeypot triggered');
+            return;
+        }
+
+        // Anti-spam check 2: Time-based validation (form must be open for at least 5 seconds)
+        const timeSpent = Date.now() - formLoadTime.current;
+        if (timeSpent < 5000) {
+            console.warn('Form submitted too quickly');
+            setToast({ type: 'error', message: 'Please take your time filling out the form.' });
+            return;
+        }
+
+        // Anti-spam check 3: User interaction detection
+        if (!hasInteracted.current) {
+            console.warn('No user interaction detected');
             return;
         }
 
         setIsSubmitting(true);
         try {
+            // Get reCAPTCHA token
+            let recaptchaToken = '';
+            if (typeof window !== 'undefined' && window.grecaptcha) {
+                try {
+                    recaptchaToken = await window.grecaptcha.execute(
+                        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+                        { action: 'volunteer_form' }
+                    );
+                } catch (error) {
+                    console.error('reCAPTCHA error:', error);
+                }
+            }
+
             const response = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    recaptchaToken,
+                    timeSpent,
+                }),
             });
             const result = await response.json();
             if (response.ok) {

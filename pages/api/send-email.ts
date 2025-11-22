@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Resend } from 'resend';
+import { validateFormSubmission, getClientIp, recordSubmission } from '../../api/lib/antiSpam';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -8,10 +9,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { name, dob, phone, email, address, positions } = req.body;
+  const { name, dob, phone, email, address, positions, website, recaptchaToken, timeSpent } = req.body;
 
+  // Validate required fields first
   if (!name || !dob || !phone || !email || !address || !positions) {
     return res.status(400).json({ message: 'Missing required fields' });
+  }
+
+  // Run comprehensive anti-spam validation
+  const validation = await validateFormSubmission(req, {
+    website,
+    timeSpent,
+    recaptchaToken,
+    fieldsToValidate: { name, address }
+  });
+
+  if (!validation.valid) {
+    return res.status(validation.status || 400).json({ message: validation.message });
   }
 
   // Organizer Message - Plain Text and HTML
@@ -80,6 +94,12 @@ Pride in My Pines Committee 🌲
       text: volunteerText,
       html: volunteerHtml,
     });
+
+    // Record successful submission for rate limiting
+    const clientIp = getClientIp(req);
+    if (validation.recentSubmissions) {
+      recordSubmission(clientIp, validation.recentSubmissions);
+    }
 
     res.status(200).json({ message: 'Emails sent successfully' });
   } catch (error) {

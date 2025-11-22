@@ -1,55 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Resend } from 'resend';
+import { validateFormSubmission, getClientIp, recordSubmission } from '../../api/lib/antiSpam';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Rate limiting: Track IP addresses and submission timestamps
-const submissionTracker = new Map<string, number[]>();
-const MAX_SUBMISSIONS_PER_HOUR = 2; // Reduced from 3 to 2
-const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
-
-// Clean up old entries every 10 minutes
-setInterval(() => {
-  const now = Date.now();
-  submissionTracker.forEach((timestamps, ip) => {
-    const recentTimestamps = timestamps.filter(t => now - t < RATE_LIMIT_WINDOW);
-    if (recentTimestamps.length === 0) {
-      submissionTracker.delete(ip);
-    } else {
-      submissionTracker.set(ip, recentTimestamps);
-    }
-  });
-}, 10 * 60 * 1000);
-
-// Verify reCAPTCHA token
-async function verifyRecaptcha(token: string): Promise<boolean> {
-  if (!process.env.RECAPTCHA_SECRET_KEY || !token) {
-    return false;
-  }
-
-  try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-    });
-
-    const data = await response.json();
-    return data.success && data.score >= 0.5; // Score threshold (0.0 - 1.0, higher is more human-like)
-  } catch (error) {
-    console.error('reCAPTCHA verification error:', error);
-    return false;
-  }
-}
-
-// Get client IP address
-function getClientIp(req: NextApiRequest): string {
-  const forwarded = req.headers['x-forwarded-for'];
-  const ip = typeof forwarded === 'string' 
-    ? forwarded.split(',')[0] 
-    : req.socket.remoteAddress || 'unknown';
-  return ip;
-}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -58,84 +11,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { name, email, subject, message, website, recaptchaToken, timeSpent } = req.body;
 
-  // Anti-spam check 1: Honeypot field
-  if (website) {
-    console.warn('Honeypot triggered - potential bot detected');
-    return res.status(200).json({ message: 'Form submitted successfully' }); // Return success to confuse bots
-  }
-
-  // Anti-spam check 2: Time-based validation
-  if (typeof timeSpent === 'number' && timeSpent < 5000) {
-    console.warn('Form submitted too quickly - potential bot');
-    return res.status(400).json({ message: 'Please take your time filling out the form.' });
-  }
-
-  // Anti-spam check 3: Rate limiting by IP
-  const clientIp = getClientIp(req);
-  const now = Date.now();
-  const submissions = submissionTracker.get(clientIp) || [];
-  const recentSubmissions = submissions.filter(t => now - t < RATE_LIMIT_WINDOW);
-
-  if (recentSubmissions.length >= MAX_SUBMISSIONS_PER_HOUR) {
-    console.warn(`Rate limit exceeded for IP: ${clientIp}`);
-    return res.status(429).json({ 
-      message: 'Too many submissions. Please try again later.' 
-    });
-  }
-
-  // Anti-spam check 4: reCAPTCHA verification (REQUIRED if not configured, fail without it)
-  if (!process.env.RECAPTCHA_SECRET_KEY) {
-    // If reCAPTCHA is not configured, apply stricter validation
-    console.warn('⚠️ reCAPTCHA not configured - using strict validation');
-  } else if (recaptchaToken) {
-    const isHuman = await verifyRecaptcha(recaptchaToken);
-    if (!isHuman) {
-      console.warn('reCAPTCHA verification failed - potential bot');
-      return res.status(400).json({ message: 'Verification failed. Please try again.' });
-    }
-  } else {
-    // reCAPTCHA is configured but no token provided - reject
-    console.warn('reCAPTCHA token missing');
-    return res.status(400).json({ message: 'Security verification required.' });
-  }
-
-  // Validate required fields
+  // Validate required fields first
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
-  // Additional validation: Check for suspicious patterns
-  const suspiciousPatterns = [
-    /https?:\/\//gi,        // URLs in name field
-    /<script/gi,            // Script tags
-    /\[url=/gi,             // BBCode links
-    /[A-Z]{5,}/g,           // Multiple uppercase letters (like "MqNiGBnYMtPiGyanjNtUdLw")
-    /^[a-zA-Z]{15,}$/,      // Very long strings without spaces (gibberish)
-    /(.)\1{4,}/,            // Same character repeated 5+ times
-  ];
+  // Run comprehensive anti-spam validation
+  const validation = await validateFormSubmission(req, {
+    website,
+    timeSpent,
+    recaptchaToken,
+    fieldsToValidate: { name, message }
+  });
 
-  if (suspiciousPatterns.some(pattern => pattern.test(name))) {
-    console.warn('Suspicious content detected in name field:', name);
-    return res.status(400).json({ message: 'Invalid content detected.' });
-  }
-
-  if (suspiciousPatterns.some(pattern => pattern.test(message))) {
-    console.warn('Suspicious content detected in message field:', message);
-    return res.status(400).json({ message: 'Invalid content detected.' });
-  }
-
-  // Check for gibberish text (low vowel-to-consonant ratio)
-  const checkGibberish = (text: string): boolean => {
-    const cleaned = text.replace(/[^a-zA-Z]/g, '');
-    if (cleaned.length < 10) return false;
-    const vowels = (cleaned.match(/[aeiou]/gi) || []).length;
-    const ratio = vowels / cleaned.length;
-    return ratio < 0.15; // Less than 15% vowels = likely gibberish
-  };
-
-  if (checkGibberish(name) || checkGibberish(message)) {
-    console.warn('Gibberish detected:', { name, message });
-    return res.status(400).json({ message: 'Please enter valid text.' });
+  if (!validation.valid) {
+    return res.status(validation.status || 400).json({ message: validation.message });
   }
 
   // Committee Message - Plain Text and HTML
@@ -203,8 +93,10 @@ Pride in My Pines Committee 🌲
     });
 
     // Record successful submission for rate limiting
-    recentSubmissions.push(now);
-    submissionTracker.set(clientIp, recentSubmissions);
+    const clientIp = getClientIp(req);
+    if (validation.recentSubmissions) {
+      recordSubmission(clientIp, validation.recentSubmissions);
+    }
 
     res.status(200).json({ message: 'Emails sent successfully' });
   } catch (error) {
